@@ -14,12 +14,12 @@ import retrofit2.Response;
 
 public class RemoteRepository {
 
-    public void getArtistSearchResults() {
+    public void getArtistInfoResults() {
 
         UserDataService service =
                 UserServiceClient.getUserInstance().create(UserDataService.class);
 
-        Call<ArtistApiResponse> call = service.getArtistSearchResults("cher", API_KEY);
+        Call<ArtistApiResponse> call = service.getArtistInfoResults("cher", API_KEY);
 
         Callback<ArtistApiResponse> callback = new Callback<ArtistApiResponse>() {
 
