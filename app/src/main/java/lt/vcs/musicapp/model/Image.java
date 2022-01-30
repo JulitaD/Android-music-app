@@ -28,7 +28,7 @@ public class Image {
 
     @Override
     public String toString() {
-        return "ArtistImage{" +
+        return "Image{" +
                 "text='" + text + '\'' +
                 ", size='" + size + '\'' +
                 '}';
