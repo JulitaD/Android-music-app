@@ -24,7 +24,7 @@ public class RemoteRepository {
 
     public void getArtistInfoResults() {
 
-        Call<ArtistApiResponse> call = service.getArtistInfoResults(ARTIST_NAME, API_KEY, JSON_FORMAT);
+        Call<ArtistApiResponse> call = service.getArtistInfo(ARTIST_NAME, API_KEY, JSON_FORMAT);
 
         Callback<ArtistApiResponse> callback = new Callback<ArtistApiResponse>() {
 
@@ -46,7 +46,7 @@ public class RemoteRepository {
 
     public void getArtistSearchResults() {
 
-        Call<ArtistsApiResponse> call = service.getArtistSearchResults(ARTIST_NAME, API_KEY, JSON_FORMAT);
+        Call<ArtistsApiResponse> call = service.getArtistSearch(ARTIST_NAME, API_KEY, JSON_FORMAT);
 
         Callback<ArtistsApiResponse> callback = new Callback<ArtistsApiResponse>() {
 
@@ -67,7 +67,7 @@ public class RemoteRepository {
 
     public void getAlbumInfoResults() {
 
-        Call<AlbumApiResponse> call = service.getAlbumInfoResults(ARTIST_NAME, ALBUM_NAME, API_KEY, JSON_FORMAT);
+        Call<AlbumApiResponse> call = service.getAlbumInfo(ARTIST_NAME, ALBUM_NAME, API_KEY, JSON_FORMAT);
 
         Callback<AlbumApiResponse> callback = new Callback<AlbumApiResponse>() {
 
@@ -88,7 +88,7 @@ public class RemoteRepository {
 
     public void getAlbumSearchResults() {
 
-        Call<AlbumsApiResponse> call = service.getAlbumSearchResults(ALBUM_NAME, API_KEY, JSON_FORMAT);
+        Call<AlbumsApiResponse> call = service.getAlbumSearch(ALBUM_NAME, API_KEY, JSON_FORMAT);
 
         Callback<AlbumsApiResponse> callback = new Callback<AlbumsApiResponse>() {
 

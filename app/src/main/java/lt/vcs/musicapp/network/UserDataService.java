@@ -14,14 +14,15 @@ import retrofit2.http.Query;
 public interface UserDataService {
 
     @GET("?method=artist.getinfo")
-    Call<ArtistApiResponse> getArtistInfoResults(@Query("artist") String artist_name, @Query("api_key") String api_key, @Query("format") String format);
+    Call<ArtistApiResponse> getArtistInfo(@Query("artist") String artist_name, @Query("api_key") String api_key, @Query("format") String format);
 
     @GET("?method=artist.search")
-    Call<ArtistsApiResponse> getArtistSearchResults(@Query("artist") String artist_name, @Query("api_key") String api_key, @Query("format") String format);
+    Call<ArtistsApiResponse> getArtistSearch(@Query("artist") String artist_name, @Query("api_key") String api_key, @Query("format") String format);
 
     @GET("?method=album.getInfo")
-    Call<AlbumApiResponse> getAlbumInfoResults(@Query("artist") String artist_name, @Query("album") String album_name, @Query("api_key") String api_key, @Query("format") String format);
+    Call<AlbumApiResponse> getAlbumInfo(@Query("artist") String artist_name, @Query("album") String album_name, @Query("api_key") String api_key, @Query("format") String format);
 
     @GET("?method=album.search")
-    Call<AlbumsApiResponse> getAlbumSearchResults(@Query("album") String album_name, @Query("api_key") String api_key, @Query("format") String format);
+    Call<AlbumsApiResponse> getAlbumSearch(@Query("album") String album_name, @Query("api_key") String api_key, @Query("format") String format);
+
 }
