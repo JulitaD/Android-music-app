@@ -5,20 +5,14 @@ import java.util.List;
 public class Artist {
 
     private String name;
-    private List<String> image;
-    private List<Artist> similar;
-    private List<String> bio;
+    private List<ArtistImage> image;
+//    private List<SimilarArtist> similar;
+    private Biography bio;
 
-    public Artist(String name, List<String> image, List<Artist> similar, List<String> bio) {
+    public Artist(String name, List<ArtistImage> image, Biography bio) {
         this.name = name;
         this.image = image;
-        this.similar = similar;
         this.bio = bio;
-    }
-
-    public Artist(String name, List<String> image) {
-        this.name = name;
-        this.image = image;
     }
 
     public String getName() {
@@ -29,27 +23,19 @@ public class Artist {
         this.name = name;
     }
 
-    public List<String> getImage() {
+    public List<ArtistImage> getImage() {
         return image;
     }
 
-    public void setImage(List<String> image) {
+    public void setImage(List<ArtistImage> image) {
         this.image = image;
     }
 
-    public List<Artist> getSimilar() {
-        return similar;
-    }
-
-    public void setSimilar(List<Artist> similar) {
-        this.similar = similar;
-    }
-
-    public List<String> getBio() {
+    public Biography getBio() {
         return bio;
     }
 
-    public void setBio(List<String> bio) {
+    public void setBio(Biography bio) {
         this.bio = bio;
     }
 
@@ -57,8 +43,7 @@ public class Artist {
     public String toString() {
         return "Artist [" +
                 "name=" + name +
-                ", image=" + image +
-                ", similar=" + similar +
-                ", bio=" + bio;
+                ", image:" + image +
+                ", bio: " + bio;
     }
 }
