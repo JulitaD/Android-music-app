@@ -9,9 +9,8 @@ public class Artist {
     private Artists similar;
     private Biography bio;
 
-    public Artist(String name, List<Image> image) {
+    public Artist(String name) {
         this.name = name;
-        this.image = image;
     }
 
     public String getName() {
