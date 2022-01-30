@@ -7,6 +7,7 @@ import static lt.vcs.musicapp.Constants.LOG_TAG;
 import android.util.Log;
 
 import lt.vcs.musicapp.model.AlbumApiResponse;
+import lt.vcs.musicapp.model.AlbumsApiResponse;
 import lt.vcs.musicapp.model.ArtistApiResponse;
 import lt.vcs.musicapp.model.ArtistsApiResponse;
 import lt.vcs.musicapp.network.UserDataService;
@@ -75,6 +76,27 @@ public class RemoteRepository {
 
             @Override
             public void onFailure(Call<AlbumApiResponse> call, Throwable t) {
+                Log.i(LOG_TAG, "Failed to retrieve data: " + t.getMessage());
+                call.cancel();
+            }
+        };
+
+        call.enqueue(callback);
+    }
+
+    public void getAlbumSearchResults() {
+
+        Call<AlbumsApiResponse> call = service.getAlbumSearchResults("Believe", API_KEY, JSON_FORMAT);
+
+        Callback<AlbumsApiResponse> callback = new Callback<AlbumsApiResponse>() {
+
+            @Override
+            public void onResponse(Call<AlbumsApiResponse> call, Response<AlbumsApiResponse> response) {
+                Log.i(LOG_TAG, "onResponse: " + response.body());
+            }
+
+            @Override
+            public void onFailure(Call<AlbumsApiResponse> call, Throwable t) {
                 Log.i(LOG_TAG, "Failed to retrieve data: " + t.getMessage());
                 call.cancel();
             }

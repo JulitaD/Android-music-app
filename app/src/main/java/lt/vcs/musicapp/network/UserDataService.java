@@ -3,6 +3,7 @@ package lt.vcs.musicapp.network;
 import java.util.List;
 
 import lt.vcs.musicapp.model.AlbumApiResponse;
+import lt.vcs.musicapp.model.AlbumsApiResponse;
 import lt.vcs.musicapp.model.ArtistApiResponse;
 import lt.vcs.musicapp.model.ArtistsApiResponse;
 import retrofit2.Call;
@@ -20,4 +21,7 @@ public interface UserDataService {
 
     @GET("?method=album.getInfo")
     Call<AlbumApiResponse> getAlbumInfoResults(@Query("artist") String artist_name, @Query("album") String album_name, @Query("api_key") String api_key, @Query("format") String format);
+
+    @GET("?method=album.search")
+    Call<AlbumsApiResponse> getAlbumSearchResults(@Query("album") String album_name, @Query("api_key") String api_key, @Query("format") String format);
 }
