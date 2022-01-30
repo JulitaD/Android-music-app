@@ -1,6 +1,7 @@
 package lt.vcs.musicapp.repository;
 
 import static lt.vcs.musicapp.Constants.API_KEY;
+import static lt.vcs.musicapp.Constants.JSON_FORMAT;
 import static lt.vcs.musicapp.Constants.LOG_TAG;
 
 import android.util.Log;
@@ -19,7 +20,7 @@ public class RemoteRepository {
         UserDataService service =
                 UserServiceClient.getUserInstance().create(UserDataService.class);
 
-        Call<ArtistApiResponse> call = service.getArtistInfoResults("cher", API_KEY);
+        Call<ArtistApiResponse> call = service.getArtistInfoResults("Cher", API_KEY, JSON_FORMAT);
 
         Callback<ArtistApiResponse> callback = new Callback<ArtistApiResponse>() {
 
@@ -30,7 +31,7 @@ public class RemoteRepository {
 
             @Override
             public void onFailure(Call<ArtistApiResponse> call, Throwable t) {
-                Log.i(LOG_TAG, "Failed to retrieve data" + t.getMessage());
+                Log.i(LOG_TAG, "Failed to retrieve data: " + t.getMessage());
                 call.cancel();
             }
         };
