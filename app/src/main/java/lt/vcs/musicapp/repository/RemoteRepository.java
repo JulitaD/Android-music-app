@@ -5,6 +5,7 @@ import static lt.vcs.musicapp.Constants.API_KEY;
 import static lt.vcs.musicapp.Constants.ARTIST_NAME;
 import static lt.vcs.musicapp.Constants.JSON_FORMAT;
 import static lt.vcs.musicapp.Constants.LOG_TAG;
+import static lt.vcs.musicapp.Constants.TRACK_NAME;
 
 import android.util.Log;
 
@@ -13,6 +14,7 @@ import lt.vcs.musicapp.model.AlbumsApiResponse;
 import lt.vcs.musicapp.model.ArtistApiResponse;
 import lt.vcs.musicapp.model.ArtistsApiResponse;
 import lt.vcs.musicapp.model.TopAlbumsApiResponse;
+import lt.vcs.musicapp.model.TracksApiResponse;
 import lt.vcs.musicapp.network.UserDataService;
 import lt.vcs.musicapp.network.UserServiceClient;
 import retrofit2.Call;
@@ -121,6 +123,27 @@ public class RemoteRepository {
 
             @Override
             public void onFailure(Call<TopAlbumsApiResponse> call, Throwable t) {
+                Log.i(LOG_TAG, "Failed to retrieve data: " + t.getMessage());
+                call.cancel();
+            }
+        };
+
+        call.enqueue(callback);
+    }
+
+    public void getTrackSearch() {
+
+        Call<TracksApiResponse> call = service.getTrackSearch(TRACK_NAME, API_KEY, JSON_FORMAT);
+
+        Callback<TracksApiResponse> callback = new Callback<TracksApiResponse>() {
+
+            @Override
+            public void onResponse(Call<TracksApiResponse> call, Response<TracksApiResponse> response) {
+                Log.i(LOG_TAG, "onResponse: " + response.body());
+            }
+
+            @Override
+            public void onFailure(Call<TracksApiResponse> call, Throwable t) {
                 Log.i(LOG_TAG, "Failed to retrieve data: " + t.getMessage());
                 call.cancel();
             }
