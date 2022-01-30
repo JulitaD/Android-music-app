@@ -19,7 +19,7 @@ public class ArtistSearchResults {
     @Override
     public String toString() {
         return "ArtistSearchResults{" +
-                "artistmatches=" + artistmatches +
+                "artist matches=" + artistmatches +
                 '}';
     }
 }

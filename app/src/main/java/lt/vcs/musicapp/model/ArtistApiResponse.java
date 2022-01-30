@@ -14,6 +14,8 @@ public class ArtistApiResponse {
 
     @Override
     public String toString() {
-        return "User API response [artist=" + artist + "]";
+        return "ArtistApiResponse{" +
+                "artist=" + artist +
+                '}';
     }
 }

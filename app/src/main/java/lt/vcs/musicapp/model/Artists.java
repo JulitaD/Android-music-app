@@ -20,7 +20,7 @@ public class Artists {
 
     @Override
     public String toString() {
-        return "SimilarArtist{" +
+        return "Artists{" +
                 "artist=" + artist +
                 '}';
     }

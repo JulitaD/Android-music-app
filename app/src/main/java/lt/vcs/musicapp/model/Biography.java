@@ -18,7 +18,7 @@ public class Biography {
 
     @Override
     public String toString() {
-        return "Bio{" +
+        return "Biography{" +
                 "content='" + content + '\'' +
                 '}';
     }

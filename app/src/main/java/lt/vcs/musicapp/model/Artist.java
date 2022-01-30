@@ -40,10 +40,12 @@ public class Artist {
 
     @Override
     public String toString() {
-        return "Artist [" +
-                "name=" + name +
-                ", image:" + image +
-                ", similar artists: " + similar +
-                ", bio: " + bio;
+        return "Artist{" +
+                "name='" + name + '\'' +
+                ", image=" + image +
+                ", similar=" + similar +
+                ", biography=" + bio +
+                '}';
     }
 }
+
