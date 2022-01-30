@@ -1,11 +1,11 @@
 package lt.vcs.musicapp.model;
 
-public class ArtistImage {
+public class Image {
 
     private String text; // #text?
     private String size;
 
-    public ArtistImage(String text, String size) {
+    public Image(String text, String size) {
         this.text = text;
         this.size = size;
     }

@@ -5,11 +5,11 @@ import java.util.List;
 public class Artist {
 
     private String name;
-    private List<ArtistImage> image;
+    private List<Image> image;
     private Artists similar;
     private Biography bio;
 
-    public Artist(String name, List<ArtistImage> image) {
+    public Artist(String name, List<Image> image) {
         this.name = name;
         this.image = image;
     }
@@ -22,11 +22,11 @@ public class Artist {
         this.name = name;
     }
 
-    public List<ArtistImage> getImage() {
+    public List<Image> getImage() {
         return image;
     }
 
-    public void setImage(List<ArtistImage> image) {
+    public void setImage(List<Image> image) {
         this.image = image;
     }
 
