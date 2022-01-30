@@ -12,6 +12,7 @@ import lt.vcs.musicapp.model.AlbumApiResponse;
 import lt.vcs.musicapp.model.AlbumsApiResponse;
 import lt.vcs.musicapp.model.ArtistApiResponse;
 import lt.vcs.musicapp.model.ArtistsApiResponse;
+import lt.vcs.musicapp.model.TopAlbumsApiResponse;
 import lt.vcs.musicapp.network.UserDataService;
 import lt.vcs.musicapp.network.UserServiceClient;
 import retrofit2.Call;
@@ -99,6 +100,27 @@ public class RemoteRepository {
 
             @Override
             public void onFailure(Call<AlbumsApiResponse> call, Throwable t) {
+                Log.i(LOG_TAG, "Failed to retrieve data: " + t.getMessage());
+                call.cancel();
+            }
+        };
+
+        call.enqueue(callback);
+    }
+
+    public void getTopAlbums() {
+
+        Call<TopAlbumsApiResponse> call = service.getTopAlbums(ARTIST_NAME, API_KEY, JSON_FORMAT);
+
+        Callback<TopAlbumsApiResponse> callback = new Callback<TopAlbumsApiResponse>() {
+
+            @Override
+            public void onResponse(Call<TopAlbumsApiResponse> call, Response<TopAlbumsApiResponse> response) {
+                Log.i(LOG_TAG, "onResponse: " + response.body());
+            }
+
+            @Override
+            public void onFailure(Call<TopAlbumsApiResponse> call, Throwable t) {
                 Log.i(LOG_TAG, "Failed to retrieve data: " + t.getMessage());
                 call.cancel();
             }

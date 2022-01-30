@@ -6,6 +6,7 @@ import lt.vcs.musicapp.model.AlbumApiResponse;
 import lt.vcs.musicapp.model.AlbumsApiResponse;
 import lt.vcs.musicapp.model.ArtistApiResponse;
 import lt.vcs.musicapp.model.ArtistsApiResponse;
+import lt.vcs.musicapp.model.TopAlbumsApiResponse;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -25,4 +26,6 @@ public interface UserDataService {
     @GET("?method=album.search")
     Call<AlbumsApiResponse> getAlbumSearch(@Query("album") String album_name, @Query("api_key") String api_key, @Query("format") String format);
 
+    @GET("?method=artist.gettopalbums")
+    Call<TopAlbumsApiResponse> getTopAlbums(@Query("artist") String artist_name, @Query("api_key") String api_key, @Query("format") String format);
 }
