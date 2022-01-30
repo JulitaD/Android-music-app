@@ -6,7 +6,7 @@ public class Artist {
 
     private String name;
     private List<ArtistImage> image;
-    private SimilarArtist similar;
+    private Artists similar;
     private Biography bio;
 
     public Artist(String name, List<ArtistImage> image) {

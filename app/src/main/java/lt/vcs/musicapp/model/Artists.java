@@ -2,11 +2,11 @@ package lt.vcs.musicapp.model;
 
 import java.util.List;
 
-public class SimilarArtist {
+public class Artists {
 
     private List<Artist> artist;
 
-    public SimilarArtist(List<Artist> artist) {
+    public Artists(List<Artist> artist) {
         this.artist = artist;
     }
 
