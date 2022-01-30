@@ -1,6 +1,8 @@
 package lt.vcs.musicapp.repository;
 
+import static lt.vcs.musicapp.Constants.ALBUM_NAME;
 import static lt.vcs.musicapp.Constants.API_KEY;
+import static lt.vcs.musicapp.Constants.ARTIST_NAME;
 import static lt.vcs.musicapp.Constants.JSON_FORMAT;
 import static lt.vcs.musicapp.Constants.LOG_TAG;
 
@@ -22,7 +24,7 @@ public class RemoteRepository {
 
     public void getArtistInfoResults() {
 
-        Call<ArtistApiResponse> call = service.getArtistInfoResults("Cher", API_KEY, JSON_FORMAT);
+        Call<ArtistApiResponse> call = service.getArtistInfoResults(ARTIST_NAME, API_KEY, JSON_FORMAT);
 
         Callback<ArtistApiResponse> callback = new Callback<ArtistApiResponse>() {
 
@@ -44,7 +46,7 @@ public class RemoteRepository {
 
     public void getArtistSearchResults() {
 
-        Call<ArtistsApiResponse> call = service.getArtistSearchResults("Cher", API_KEY, JSON_FORMAT);
+        Call<ArtistsApiResponse> call = service.getArtistSearchResults(ARTIST_NAME, API_KEY, JSON_FORMAT);
 
         Callback<ArtistsApiResponse> callback = new Callback<ArtistsApiResponse>() {
 
@@ -65,7 +67,7 @@ public class RemoteRepository {
 
     public void getAlbumInfoResults() {
 
-        Call<AlbumApiResponse> call = service.getAlbumInfoResults("Cher", "Believe", API_KEY, JSON_FORMAT);
+        Call<AlbumApiResponse> call = service.getAlbumInfoResults(ARTIST_NAME, ALBUM_NAME, API_KEY, JSON_FORMAT);
 
         Callback<AlbumApiResponse> callback = new Callback<AlbumApiResponse>() {
 
@@ -86,7 +88,7 @@ public class RemoteRepository {
 
     public void getAlbumSearchResults() {
 
-        Call<AlbumsApiResponse> call = service.getAlbumSearchResults("Believe", API_KEY, JSON_FORMAT);
+        Call<AlbumsApiResponse> call = service.getAlbumSearchResults(ALBUM_NAME, API_KEY, JSON_FORMAT);
 
         Callback<AlbumsApiResponse> callback = new Callback<AlbumsApiResponse>() {
 
