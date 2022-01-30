@@ -6,13 +6,12 @@ public class Artist {
 
     private String name;
     private List<ArtistImage> image;
-//    private List<SimilarArtist> similar;
+    private SimilarArtist similar;
     private Biography bio;
 
-    public Artist(String name, List<ArtistImage> image, Biography bio) {
+    public Artist(String name, List<ArtistImage> image) {
         this.name = name;
         this.image = image;
-        this.bio = bio;
     }
 
     public String getName() {
@@ -44,6 +43,7 @@ public class Artist {
         return "Artist [" +
                 "name=" + name +
                 ", image:" + image +
+                ", similar artists: " + similar +
                 ", bio: " + bio;
     }
 }
