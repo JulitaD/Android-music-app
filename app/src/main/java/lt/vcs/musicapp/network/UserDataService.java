@@ -6,9 +6,10 @@ import lt.vcs.musicapp.model.ArtistApiResponse;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface UserDataService {
 
-    @GET("?method=artist.getinfo&artist={artist_name}&api_key={API_KEY}&format=json")
-    Call<ArtistApiResponse> getArtistInfoResults(@Path("artist_name") String artist_name, @Path("API_KEY") String API_KEY);
+    @GET("?method=artist.getinfo")
+    Call<ArtistApiResponse> getArtistInfoResults(@Query("artist") String artist_name, @Query("api_key") String api_key, @Query("format") String format);
 }
