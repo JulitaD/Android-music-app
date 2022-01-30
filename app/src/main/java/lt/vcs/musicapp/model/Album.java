@@ -10,8 +10,7 @@ public class Album {
     private Wiki wiki;
     private Tracks tracks;
 
-    public Album(String artist, String name, List<Image> image) {
-        this.artist = artist;
+    public Album(String name, List<Image> image) {
         this.name = name;
         this.image = image;
     }
