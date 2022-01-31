@@ -1,7 +1,10 @@
 package lt.vcs.musicapp.model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Image {
 
+    @SerializedName("#text")
     private String text; // #text?
     private String size;
 
