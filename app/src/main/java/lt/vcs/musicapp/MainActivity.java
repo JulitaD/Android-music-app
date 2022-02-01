@@ -3,21 +3,84 @@ package lt.vcs.musicapp;
 import static lt.vcs.musicapp.Constants.LOG_TAG;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
 import android.util.Log;
 
-import lt.vcs.musicapp.repository.RemoteRepository;
+import javax.security.auth.login.LoginException;
+
+import lt.vcs.musicapp.model.Album;
+import lt.vcs.musicapp.model.AlbumSearchResults;
+import lt.vcs.musicapp.model.Artist;
+import lt.vcs.musicapp.model.ArtistApiResponse;
+import lt.vcs.musicapp.model.ArtistSearchResults;
+import lt.vcs.musicapp.model.TopAlbums;
+import lt.vcs.musicapp.model.TrackSearchResults;
 
 public class MainActivity extends AppCompatActivity {
+
+    MainActivityViewModel viewModel = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RemoteRepository remoteRepository = new RemoteRepository();
-        remoteRepository.getArtistInfoResults();
+        viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
+
+//        viewModel.fetchArtistInfo();
+//        viewModel.fetchArtistSearchResults();
+//        viewModel.fetchAlbumInfo();
+//        viewModel.fetchAlbumSearchResults();
+//        viewModel.fetchTopAlbums();
+        viewModel.fetchTrackSearchResults();
+        setUpObservers();
+
+    }
+
+    private void setUpObservers() {
+
+        viewModel.getArtist().observe(this, new Observer<Artist>() {
+                    @Override
+                    public void onChanged(Artist artist) {
+                        Log.i(LOG_TAG, "Activity onResponse: " + artist);
+                    }
+                }
+        );
+        viewModel.getArtistSearchResults().observe(this, new Observer<ArtistSearchResults>() {
+            @Override
+            public void onChanged(ArtistSearchResults artistSearchResults) {
+                Log.i(LOG_TAG, "Activity onResponse: " + artistSearchResults);
+            }
+        });
+        viewModel.getAlbum().observe(this, new Observer<Album>() {
+                    @Override
+                    public void onChanged(Album album) {
+                        Log.i(LOG_TAG, "Activity onResponse: " + album);
+                    }
+                }
+        );
+        viewModel.getAlbumSearchResults().observe(this, new Observer<AlbumSearchResults>() {
+                    @Override
+                    public void onChanged(AlbumSearchResults albumSearchResults) {
+                        Log.i(LOG_TAG, "Activity onResponse: " + albumSearchResults);
+                    }
+                }
+        );
+        viewModel.getTopAlbums().observe(this, new Observer<TopAlbums>() {
+            @Override
+            public void onChanged(TopAlbums topAlbums) {
+                Log.i(LOG_TAG, "Activity onResponse: " + topAlbums);
+            }
+        });
+        viewModel.getTrackResults().observe(this, new Observer<TrackSearchResults>() {
+            @Override
+            public void onChanged(TrackSearchResults trackSearchResults) {
+                Log.i(LOG_TAG, "Activity onResponse: " + trackSearchResults);
+            }
+        });
 
     }
 }
