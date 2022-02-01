@@ -5,12 +5,18 @@ import static lt.vcs.musicapp.Constants.LOG_TAG;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
 
+import java.util.Collections;
+import java.util.List;
+
 import javax.security.auth.login.LoginException;
 
+import lt.vcs.musicapp.UI.recyclerview.ArtistsAdapter;
 import lt.vcs.musicapp.model.Album;
 import lt.vcs.musicapp.model.AlbumSearchResults;
 import lt.vcs.musicapp.model.Artist;
@@ -22,6 +28,9 @@ import lt.vcs.musicapp.model.TrackSearchResults;
 public class MainActivity extends AppCompatActivity {
 
     MainActivityViewModel viewModel = null;
+    RecyclerView recyclerView;
+    ArtistsAdapter artistsAdapter;
+    List<Artist> artistList = Collections.emptyList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,13 +39,18 @@ public class MainActivity extends AppCompatActivity {
 
         viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
 
-//        viewModel.fetchArtistInfo();
-//        viewModel.fetchArtistSearchResults();
-//        viewModel.fetchAlbumInfo();
-//        viewModel.fetchAlbumSearchResults();
-//        viewModel.fetchTopAlbums();
+        viewModel.fetchArtistInfo();
+        viewModel.fetchArtistSearchResults();
+        viewModel.fetchAlbumInfo();
+        viewModel.fetchAlbumSearchResults();
+        viewModel.fetchTopAlbums();
         viewModel.fetchTrackSearchResults();
         setUpObservers();
+
+        recyclerView = findViewById(R.id.recycleView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+        artistsAdapter = new ArtistsAdapter(artistList, getApplication());
+        recyclerView.setAdapter(artistsAdapter);
 
     }
 
