@@ -2,17 +2,17 @@ package lt.vcs.musicapp.model;
 
 public class TrackSearchResults {
 
-    private Tracks trackmatches;
+    private TrackMatches trackmatches;
 
-    public TrackSearchResults(Tracks trackmatches) {
+    public TrackSearchResults(TrackMatches trackmatches) {
         this.trackmatches = trackmatches;
     }
 
-    public Tracks getTrackmatches() {
+    public TrackMatches getTrackmatches() {
         return trackmatches;
     }
 
-    public void setTrackmatches(Tracks trackmatches) {
+    public void setTrackmatches(TrackMatches trackmatches) {
         this.trackmatches = trackmatches;
     }
 
