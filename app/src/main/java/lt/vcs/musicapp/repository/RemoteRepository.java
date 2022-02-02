@@ -9,12 +9,12 @@ import static lt.vcs.musicapp.Constants.TRACK_NAME;
 
 import android.util.Log;
 
-import lt.vcs.musicapp.model.AlbumApiResponse;
-import lt.vcs.musicapp.model.AlbumsApiResponse;
-import lt.vcs.musicapp.model.ArtistApiResponse;
-import lt.vcs.musicapp.model.ArtistsApiResponse;
-import lt.vcs.musicapp.model.TopAlbumsApiResponse;
-import lt.vcs.musicapp.model.TracksApiResponse;
+import lt.vcs.musicapp.main.album.model.AlbumApiResponse;
+import lt.vcs.musicapp.main.album.model.AlbumsApiResponse;
+import lt.vcs.musicapp.main.artist.model.ArtistApiResponse;
+import lt.vcs.musicapp.main.artist.model.ArtistsApiResponse;
+import lt.vcs.musicapp.main.album.model.TopAlbumsApiResponse;
+import lt.vcs.musicapp.main.track.model.TracksApiResponse;
 import lt.vcs.musicapp.network.UserDataService;
 import lt.vcs.musicapp.network.UserServiceClient;
 import retrofit2.Call;

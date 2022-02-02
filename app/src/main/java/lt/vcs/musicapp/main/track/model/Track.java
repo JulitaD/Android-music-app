@@ -1,14 +1,17 @@
-package lt.vcs.musicapp.model;
+package lt.vcs.musicapp.main.track.model;
 
 import java.util.List;
 
-public class TrackMatch {
+import lt.vcs.musicapp.main.artist.model.Artist;
+import lt.vcs.musicapp.main.artist.model.Image;
+
+public class Track {
 
     private String name;
-    private String artist;
+    private Artist artist;
     private List<Image> image;
 
-    public TrackMatch(String name) {
+    public Track(String name) {
         this.name = name;
     }
 

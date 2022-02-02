@@ -1,6 +1,9 @@
-package lt.vcs.musicapp.model;
+package lt.vcs.musicapp.main.album.model;
 
 import java.util.List;
+
+import lt.vcs.musicapp.main.artist.model.Artist;
+import lt.vcs.musicapp.main.artist.model.Image;
 
 public class TopAlbum {
 

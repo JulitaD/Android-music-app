@@ -1,20 +1,20 @@
-package lt.vcs.musicapp.model;
+package lt.vcs.musicapp.main.track.model;
 
 import java.util.List;
 
-public class TrackMatches {
+public class Tracks {
 
-    private List<TrackMatch> track;
+    private List<Track> track;
 
-    public TrackMatches(List<TrackMatch> track) {
+    public Tracks(List<Track> track) {
         this.track = track;
     }
 
-    public List<TrackMatch> getTrack() {
+    public List<Track> getTrack() {
         return track;
     }
 
-    public void setTrack(List<TrackMatch> track) {
+    public void setTrack(List<Track> track) {
         this.track = track;
     }
 

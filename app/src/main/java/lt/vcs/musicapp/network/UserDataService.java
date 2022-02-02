@@ -1,16 +1,13 @@
 package lt.vcs.musicapp.network;
 
-import java.util.List;
-
-import lt.vcs.musicapp.model.AlbumApiResponse;
-import lt.vcs.musicapp.model.AlbumsApiResponse;
-import lt.vcs.musicapp.model.ArtistApiResponse;
-import lt.vcs.musicapp.model.ArtistsApiResponse;
-import lt.vcs.musicapp.model.TopAlbumsApiResponse;
-import lt.vcs.musicapp.model.TracksApiResponse;
+import lt.vcs.musicapp.main.album.model.AlbumApiResponse;
+import lt.vcs.musicapp.main.album.model.AlbumsApiResponse;
+import lt.vcs.musicapp.main.artist.model.ArtistApiResponse;
+import lt.vcs.musicapp.main.artist.model.ArtistsApiResponse;
+import lt.vcs.musicapp.main.album.model.TopAlbumsApiResponse;
+import lt.vcs.musicapp.main.track.model.TracksApiResponse;
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface UserDataService {

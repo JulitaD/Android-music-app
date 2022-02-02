@@ -1,4 +1,4 @@
-package lt.vcs.musicapp.UI.recyclerview;
+package lt.vcs.musicapp.main.artist.viewModel;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -15,7 +15,7 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import lt.vcs.musicapp.R;
-import lt.vcs.musicapp.model.Artist;
+import lt.vcs.musicapp.main.artist.model.Artist;
 
 public class ArtistsAdapter extends RecyclerView.Adapter<ArtistsAdapter.ViewHolder> {
 
@@ -32,7 +32,7 @@ public class ArtistsAdapter extends RecyclerView.Adapter<ArtistsAdapter.ViewHold
     public ArtistsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         return new ViewHolder(LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.recyclerview_item, parent, false));
+                .inflate(R.layout.recyclerview_artists, parent, false));
     }
 
     @Override
@@ -41,7 +41,6 @@ public class ArtistsAdapter extends RecyclerView.Adapter<ArtistsAdapter.ViewHold
         Glide.with(context)
                 .load(artistList.get(position).getImage().get(3).getText())
                 .into(holder.imageView);
-
     }
 
     @Override

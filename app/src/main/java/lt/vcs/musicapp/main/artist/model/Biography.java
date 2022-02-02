@@ -1,4 +1,4 @@
-package lt.vcs.musicapp.model;
+package lt.vcs.musicapp.main.artist.model;
 
 public class Biography {
 
