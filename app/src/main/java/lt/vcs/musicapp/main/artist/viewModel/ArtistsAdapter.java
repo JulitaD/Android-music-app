@@ -15,7 +15,7 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import lt.vcs.musicapp.R;
-import lt.vcs.musicapp.main.artist.model.Artist;
+import lt.vcs.musicapp.main.artist.model.details.Artist;
 
 public class ArtistsAdapter extends RecyclerView.Adapter<ArtistsAdapter.ViewHolder> {
 

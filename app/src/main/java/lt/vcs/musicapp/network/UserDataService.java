@@ -1,11 +1,11 @@
 package lt.vcs.musicapp.network;
 
-import lt.vcs.musicapp.main.album.model.AlbumApiResponse;
-import lt.vcs.musicapp.main.album.model.AlbumsApiResponse;
-import lt.vcs.musicapp.main.artist.model.ArtistApiResponse;
-import lt.vcs.musicapp.main.artist.model.ArtistsApiResponse;
-import lt.vcs.musicapp.main.album.model.TopAlbumsApiResponse;
-import lt.vcs.musicapp.main.track.model.TracksApiResponse;
+import lt.vcs.musicapp.main.album.model.details.AlbumApiResponse;
+import lt.vcs.musicapp.main.album.model.search.AlbumsApiResponse;
+import lt.vcs.musicapp.main.artist.model.details.ArtistApiResponse;
+import lt.vcs.musicapp.main.artist.model.search.ArtistsApiResponse;
+import lt.vcs.musicapp.main.album.model.search.TopAlbumsApiResponse;
+import lt.vcs.musicapp.main.track.model.search.TracksApiResponse;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;

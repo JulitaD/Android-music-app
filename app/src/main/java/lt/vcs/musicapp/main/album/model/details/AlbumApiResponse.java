@@ -1,4 +1,6 @@
-package lt.vcs.musicapp.main.album.model;
+package lt.vcs.musicapp.main.album.model.details;
+
+import lt.vcs.musicapp.main.album.model.details.Album;
 
 public class AlbumApiResponse {
 

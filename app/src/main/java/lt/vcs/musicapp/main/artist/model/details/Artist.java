@@ -1,4 +1,4 @@
-package lt.vcs.musicapp.main.artist.model;
+package lt.vcs.musicapp.main.artist.model.details;
 
 import java.util.List;
 

@@ -1,4 +1,6 @@
-package lt.vcs.musicapp.main.track.model;
+package lt.vcs.musicapp.main.track.model.search;
+
+import lt.vcs.musicapp.main.track.model.details.TrackMatches;
 
 public class TrackSearchResults {
 

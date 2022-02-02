@@ -16,12 +16,12 @@ import java.util.List;
 
 import lt.vcs.musicapp.main.album.viewModel.AlbumsAdapter;
 import lt.vcs.musicapp.main.artist.viewModel.ArtistsAdapter;
-import lt.vcs.musicapp.main.album.model.Album;
-import lt.vcs.musicapp.main.album.model.AlbumSearchResults;
-import lt.vcs.musicapp.main.artist.model.Artist;
-import lt.vcs.musicapp.main.artist.model.ArtistSearchResults;
-import lt.vcs.musicapp.main.album.model.TopAlbums;
-import lt.vcs.musicapp.main.track.model.TrackSearchResults;
+import lt.vcs.musicapp.main.album.model.details.Album;
+import lt.vcs.musicapp.main.album.model.search.AlbumSearchResults;
+import lt.vcs.musicapp.main.artist.model.details.Artist;
+import lt.vcs.musicapp.main.artist.model.search.ArtistSearchResults;
+import lt.vcs.musicapp.main.album.model.details.TopAlbums;
+import lt.vcs.musicapp.main.track.model.search.TrackSearchResults;
 
 public class MainActivity extends AppCompatActivity {
 

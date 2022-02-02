@@ -1,4 +1,4 @@
-package lt.vcs.musicapp.main.track.model;
+package lt.vcs.musicapp.main.track.model.search;
 
 public class TracksApiResponse {
 

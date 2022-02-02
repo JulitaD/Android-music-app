@@ -1,6 +1,8 @@
-package lt.vcs.musicapp.main.artist.model;
+package lt.vcs.musicapp.main.artist.model.details;
 
 import java.util.List;
+
+import lt.vcs.musicapp.main.artist.model.details.Artist;
 
 public class Artists {
 

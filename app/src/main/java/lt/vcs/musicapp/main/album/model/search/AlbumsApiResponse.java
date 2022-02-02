@@ -1,4 +1,6 @@
-package lt.vcs.musicapp.main.album.model;
+package lt.vcs.musicapp.main.album.model.search;
+
+import lt.vcs.musicapp.main.album.model.search.AlbumSearchResults;
 
 public class AlbumsApiResponse {
 

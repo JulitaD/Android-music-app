@@ -1,4 +1,6 @@
-package lt.vcs.musicapp.main.artist.model;
+package lt.vcs.musicapp.main.artist.model.search;
+
+import lt.vcs.musicapp.main.artist.model.details.Artists;
 
 public class ArtistSearchResults {
 

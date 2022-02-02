@@ -1,4 +1,4 @@
-package lt.vcs.musicapp.main.album.model;
+package lt.vcs.musicapp.main.album.model.details;
 
 public class Wiki {
 
