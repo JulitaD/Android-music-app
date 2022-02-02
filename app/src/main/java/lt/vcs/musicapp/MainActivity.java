@@ -39,12 +39,12 @@ public class MainActivity extends AppCompatActivity {
 
         viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
 
-        viewModel.fetchArtistInfo();
+//        viewModel.fetchArtistInfo();
         viewModel.fetchArtistSearchResults();
-        viewModel.fetchAlbumInfo();
-        viewModel.fetchAlbumSearchResults();
-        viewModel.fetchTopAlbums();
-        viewModel.fetchTrackSearchResults();
+//        viewModel.fetchAlbumInfo();
+//        viewModel.fetchAlbumSearchResults();
+//        viewModel.fetchTopAlbums();
+//        viewModel.fetchTrackSearchResults();
         setUpObservers();
 
         recyclerView = findViewById(R.id.recycleView);
@@ -67,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChanged(ArtistSearchResults artistSearchResults) {
                 Log.i(LOG_TAG, "Activity onResponse: " + artistSearchResults);
+                artistsAdapter = new ArtistsAdapter(artistSearchResults.getArtistmatches().getArtist(), getApplication());
+                recyclerView.setAdapter(artistsAdapter);
             }
         });
         viewModel.getAlbum().observe(this, new Observer<Album>() {
