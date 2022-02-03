@@ -13,6 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MusicApp">
         <activity
+            android:name=".TrackSearchActivity"
+            android:exported="false"
+            android:label="Search results" />
+        <activity
             android:name=".ArtistSearchActivity"
             android:exported="false"
             android:label="Search results" />

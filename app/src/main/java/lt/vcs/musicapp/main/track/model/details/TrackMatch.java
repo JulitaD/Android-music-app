@@ -22,6 +22,22 @@ public class TrackMatch {
         this.name = name;
     }
 
+    public String getArtist() {
+        return artist;
+    }
+
+    public void setArtist(String artist) {
+        this.artist = artist;
+    }
+
+    public List<Image> getImage() {
+        return image;
+    }
+
+    public void setImage(List<Image> image) {
+        this.image = image;
+    }
+
     @Override
     public String toString() {
         return "Track{" +
