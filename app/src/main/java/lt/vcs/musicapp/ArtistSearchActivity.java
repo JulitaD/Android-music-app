@@ -11,6 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Collections;
 import java.util.List;
@@ -29,6 +32,7 @@ public class ArtistSearchActivity extends AppCompatActivity {
     ArtistSearchViewModel viewModel = null;
     RecyclerView recyclerView;
     ArtistsAdapter artistsAdapter;
+    List<Artist> artistList = Collections.emptyList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +49,11 @@ public class ArtistSearchActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycleView);
         recyclerView.setLayoutManager(new LinearLayoutManager(ArtistSearchActivity.this));
         recyclerView.setAdapter(artistsAdapter);
+
+        artistsAdapter = new ArtistsAdapter(artistList, getApplication());
+        recyclerView.setAdapter(artistsAdapter);
+
+        clickItemFromList();
     }
 
     private void setUpObservers() {
@@ -53,11 +62,23 @@ public class ArtistSearchActivity extends AppCompatActivity {
                     @Override
                     public void onChanged(ArtistSearchResults artistSearchResults) {
                         Log.i(LOG_TAG, "Activity onResponse: " + artistSearchResults);
-                        artistsAdapter = new ArtistsAdapter(artistSearchResults.getArtistmatches().getArtist(), getApplication());
-                        recyclerView.setAdapter(artistsAdapter);
+                        artistList = artistSearchResults.getArtistmatches().getArtist();
+
+                        artistsAdapter.addList(artistList);
                     }
                 }
         );
+
+    }
+
+    private void clickItemFromList() {
+        artistsAdapter.setOnItemClickListener(new ClickListener() {
+            @Override
+            public void onItemClick(int position, View v) {
+                String message = artistList.get(position).toString();
+                Snackbar.make(v, message, Snackbar.LENGTH_LONG).show();
+            }
+        });
 
     }
 }

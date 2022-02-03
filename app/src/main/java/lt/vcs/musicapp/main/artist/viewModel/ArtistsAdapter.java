@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
+import lt.vcs.musicapp.ClickListener;
 import lt.vcs.musicapp.R;
 import lt.vcs.musicapp.main.artist.model.details.Artist;
 
@@ -21,10 +22,16 @@ public class ArtistsAdapter extends RecyclerView.Adapter<ArtistsAdapter.ViewHold
 
     List<Artist> artistList;
     Context context;
+    public static ClickListener clickListener;
 
     public ArtistsAdapter(List<Artist> list, Context context) {
         this.artistList = list;
         this.context = context;
+    }
+
+    public void addList(List<Artist> list) {
+        this.artistList = list;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -48,7 +55,7 @@ public class ArtistsAdapter extends RecyclerView.Adapter<ArtistsAdapter.ViewHold
         return artistList.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView artistNameTextView;
         ImageView imageView;
 
@@ -56,7 +63,18 @@ public class ArtistsAdapter extends RecyclerView.Adapter<ArtistsAdapter.ViewHold
             super(itemView);
             artistNameTextView = itemView.findViewById(R.id.artistNameTextView);
             imageView = itemView.findViewById(R.id.artistImageView);
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View view) {
+            ArtistsAdapter.clickListener.onItemClick(getAbsoluteAdapterPosition(), view);
+        }
+    }
+
+    public void setOnItemClickListener(ClickListener
+                                               clickListener) {
+        ArtistsAdapter.clickListener = clickListener;
     }
 }
 
