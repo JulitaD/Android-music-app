@@ -13,9 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MusicApp">
         <activity
+            android:name=".ArtistSearchActivity"
+            android:exported="false"
+            android:label="Search results" />
+        <activity
             android:name=".AlbumSearchActivity"
             android:exported="false"
-            android:label="Search results"/>
+            android:label="Search results" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
