@@ -1,4 +1,4 @@
-package lt.vcs.musicapp;
+package lt.vcs.musicapp.main.artist.model.search;
 
 import static lt.vcs.musicapp.Constants.LOG_TAG;
 
@@ -18,12 +18,9 @@ import com.google.android.material.snackbar.Snackbar;
 import java.util.Collections;
 import java.util.List;
 
-import lt.vcs.musicapp.main.album.model.details.Album;
-import lt.vcs.musicapp.main.album.model.search.AlbumSearchResults;
-import lt.vcs.musicapp.main.album.viewModel.AlbumSearchViewModel;
-import lt.vcs.musicapp.main.album.viewModel.AlbumsAdapter;
+import lt.vcs.musicapp.ClickListener;
+import lt.vcs.musicapp.R;
 import lt.vcs.musicapp.main.artist.model.details.Artist;
-import lt.vcs.musicapp.main.artist.model.search.ArtistSearchResults;
 import lt.vcs.musicapp.main.artist.viewModel.ArtistSearchViewModel;
 import lt.vcs.musicapp.main.artist.viewModel.ArtistsAdapter;
 

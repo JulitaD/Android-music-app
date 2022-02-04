@@ -1,4 +1,4 @@
-package lt.vcs.musicapp;
+package lt.vcs.musicapp.main.album.model.search;
 
 import static lt.vcs.musicapp.Constants.LOG_TAG;
 
@@ -15,8 +15,8 @@ import android.util.Log;
 import java.util.Collections;
 import java.util.List;
 
+import lt.vcs.musicapp.R;
 import lt.vcs.musicapp.main.album.model.details.Album;
-import lt.vcs.musicapp.main.album.model.search.AlbumSearchResults;
 import lt.vcs.musicapp.main.album.viewModel.AlbumSearchViewModel;
 import lt.vcs.musicapp.main.album.viewModel.AlbumsAdapter;
 

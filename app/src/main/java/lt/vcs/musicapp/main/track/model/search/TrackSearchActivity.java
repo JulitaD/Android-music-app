@@ -1,4 +1,4 @@
-package lt.vcs.musicapp;
+package lt.vcs.musicapp.main.track.model.search;
 
 import static lt.vcs.musicapp.Constants.LOG_TAG;
 
@@ -12,10 +12,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
-import lt.vcs.musicapp.main.artist.model.search.ArtistSearchResults;
-import lt.vcs.musicapp.main.artist.viewModel.ArtistSearchViewModel;
-import lt.vcs.musicapp.main.artist.viewModel.ArtistsAdapter;
-import lt.vcs.musicapp.main.track.model.search.TrackSearchResults;
+import lt.vcs.musicapp.R;
 import lt.vcs.musicapp.main.track.viewModel.TrackSearchViewModel;
 import lt.vcs.musicapp.main.track.viewModel.TracksAdapter;
 
