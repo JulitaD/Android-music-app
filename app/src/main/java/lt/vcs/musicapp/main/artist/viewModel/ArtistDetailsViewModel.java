@@ -41,12 +41,11 @@ public class ArtistDetailsViewModel extends ViewModel {
         return topAlbums;
     }
 
-
     UserDataService service = UserServiceClient.getUserInstance().create(UserDataService.class);
 
-    public void fetchArtistInfo() {
+    public void fetchArtistInfo(String artistName) {
 
-        Call<ArtistApiResponse> call = service.getArtistInfo(ARTIST_NAME, API_KEY, JSON_FORMAT);
+        Call<ArtistApiResponse> call = service.getArtistInfo(artistName, API_KEY, JSON_FORMAT);
 
         Callback<ArtistApiResponse> callback = new Callback<ArtistApiResponse>() {
 
@@ -66,9 +65,9 @@ public class ArtistDetailsViewModel extends ViewModel {
         call.enqueue(callback);
     }
 
-        public void fetchTopAlbums() {
+        public void fetchTopAlbums(String artistName) {
 
-        Call<TopAlbumsApiResponse> call = service.getTopAlbums(ARTIST_NAME, API_KEY, JSON_FORMAT);
+        Call<TopAlbumsApiResponse> call = service.getTopAlbums(artistName, API_KEY, JSON_FORMAT);
 
         Callback<TopAlbumsApiResponse> callback = new Callback<TopAlbumsApiResponse>() {
 

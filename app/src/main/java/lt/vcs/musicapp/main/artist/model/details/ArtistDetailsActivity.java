@@ -1,6 +1,9 @@
 package lt.vcs.musicapp.main.artist.model.details;
 
+import static lt.vcs.musicapp.Constants.PUT_ARTIST_NAME;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,6 +15,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Collections;
@@ -36,9 +40,9 @@ public class ArtistDetailsActivity extends AppCompatActivity {
     List<TopAlbum> topAlbumList = Collections.emptyList();
     LinearLayoutManager linearLayoutManagerTopAlbums;
     LinearLayoutManager linearLayoutManagerSimilarArtists;
-    TextView artistName;
-    ImageView artistImage;
-    TextView artistBiography;
+    TextView artistNameTextView;
+    ImageView artistImageImageView;
+    TextView artistBiographyTextView;
 
 
     @Override
@@ -47,15 +51,22 @@ public class ArtistDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_artist_details);
 
         Intent intent = getIntent();
+        String artistName = intent.getStringExtra(PUT_ARTIST_NAME);
 
         viewModel = new ViewModelProvider(this).get(ArtistDetailsViewModel.class);
         linearLayoutManagerTopAlbums = new LinearLayoutManager(ArtistDetailsActivity.this, linearLayoutManagerTopAlbums.HORIZONTAL, false);
         linearLayoutManagerSimilarArtists = new LinearLayoutManager(ArtistDetailsActivity.this, linearLayoutManagerSimilarArtists.HORIZONTAL, false);
 
-        viewModel.fetchArtistInfo();
-        viewModel.fetchTopAlbums();
+        viewModel.fetchArtistInfo(artistName);
+        viewModel.fetchTopAlbums(artistName);
         setUpObservers();
         setUpUI();
+
+
+//        artistNameTextView.setText(String.valueOf(artist.getValue().getName()));
+//        artistBiographyTextView.setText(String.valueOf(artist.getBio()));
+//        Glide.with(ArtistDetailsActivity.this)
+//                .load(artist.getImage().get(3).getText());
 
         topAlbumsRecyclerView = findViewById(R.id.topAlbumsRecycleView);
         topAlbumsRecyclerView.setLayoutManager(linearLayoutManagerTopAlbums);
@@ -68,8 +79,8 @@ public class ArtistDetailsActivity extends AppCompatActivity {
         similarArtistsRecyclerView.setAdapter(similarArtistsAdapter);
 
 
-//        clickAlbumItemFromList();
-//        clickArtistItemFromList();
+        clickAlbumItemFromList();
+        clickArtistItemFromList();
     }
 
     private void setUpObservers() {
@@ -87,15 +98,19 @@ public class ArtistDetailsActivity extends AppCompatActivity {
                     public void onChanged(Artist artist) {
                         similarArtistList = artist.getSimilar().getArtist();
                         similarArtistsAdapter.addSimilarArtistsList(similarArtistList);
+                        artistNameTextView.setText(String.valueOf(artist.getName()));
+                        artistBiographyTextView.setText(String.valueOf(artist.getBio().getContent()));
+                        Glide.with(ArtistDetailsActivity.this)
+                                .load(artist.getImage().get(3).getText());
                     }
                 }
         );
     }
 
     private void setUpUI() {
-        artistName = findViewById(R.id.artistNameTextView);
-        artistImage = findViewById(R.id.artistImageView);
-        artistBiography = findViewById(R.id.biographyContentTextView);
+        artistNameTextView = findViewById(R.id.artistNameTextView);
+        artistImageImageView = findViewById(R.id.artistImageView);
+        artistBiographyTextView = findViewById(R.id.biographyContentTextView);
     }
 
     private void clickArtistItemFromList() {

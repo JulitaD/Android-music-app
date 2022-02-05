@@ -1,6 +1,7 @@
 package lt.vcs.musicapp.main.artist.model.search;
 
 import static lt.vcs.musicapp.Constants.LOG_TAG;
+import static lt.vcs.musicapp.Constants.PUT_ARTIST_NAME;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -72,9 +73,8 @@ public class ArtistSearchActivity extends AppCompatActivity {
         artistsAdapter.setOnItemClickListener(new ClickListener() {
             @Override
             public void onItemClick(int position, View v) {
-                String message = artistList.get(position).toString();
-//                Snackbar.make(v, message, Snackbar.LENGTH_LONG).show();
                 Intent intent = new Intent(ArtistSearchActivity.this, ArtistDetailsActivity.class);
+                intent.putExtra(PUT_ARTIST_NAME, artistList.get(position).getName());
                 startActivity(intent);
             }
         });
