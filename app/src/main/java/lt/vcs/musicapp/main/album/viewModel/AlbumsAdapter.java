@@ -57,9 +57,9 @@ public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.ViewHolder
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            albumNameTextView = itemView.findViewById(R.id.albumNameTextView);
+            albumNameTextView = itemView.findViewById(R.id.topAlbumNameTextView);
             artistNameTextView = itemView.findViewById(R.id.albumArtistNameTextView);
-            imageView = itemView.findViewById(R.id.albumImageView);
+            imageView = itemView.findViewById(R.id.topAlbumImageView);
         }
     }
 }

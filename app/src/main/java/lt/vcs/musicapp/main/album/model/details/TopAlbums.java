@@ -1,29 +1,30 @@
 package lt.vcs.musicapp.main.album.model.details;
 
-import java.util.List;
+import com.google.gson.annotations.SerializedName;
 
-import lt.vcs.musicapp.main.album.model.details.TopAlbum;
+import java.util.List;
 
 public class TopAlbums {
 
-    private List<TopAlbum> album;
+    @SerializedName("album")
+    private List<TopAlbum> topAlbum;
 
     public TopAlbums(List<TopAlbum> album) {
-        this.album = album;
+        this.topAlbum = album;
     }
 
-    public List<TopAlbum> getAlbum() {
-        return album;
+    public List<TopAlbum> getTopAlbumsList() {
+        return topAlbum;
     }
 
-    public void setAlbum(List<TopAlbum> album) {
-        this.album = album;
+    public void setTopAlbum(List<TopAlbum> album) {
+        this.topAlbum = album;
     }
 
     @Override
     public String toString() {
         return "TopAlbums{" +
-                "album=" + album +
+                "album=" + topAlbum +
                 '}';
     }
 }

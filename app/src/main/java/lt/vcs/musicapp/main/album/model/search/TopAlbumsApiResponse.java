@@ -10,11 +10,11 @@ public class TopAlbumsApiResponse {
         this.topalbums = topalbums;
     }
 
-    public TopAlbums getTopalbums() {
+    public TopAlbums getTopAlbums() {
         return topalbums;
     }
 
-    public void setTopalbums(TopAlbums topalbums) {
+    public void setTopAlbums(TopAlbums topalbums) {
         this.topalbums = topalbums;
     }
 

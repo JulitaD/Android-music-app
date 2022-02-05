@@ -21,6 +21,7 @@ import java.util.List;
 import lt.vcs.musicapp.ClickListener;
 import lt.vcs.musicapp.R;
 import lt.vcs.musicapp.main.artist.model.details.Artist;
+import lt.vcs.musicapp.main.artist.model.details.ArtistDetailsActivity;
 import lt.vcs.musicapp.main.artist.viewModel.ArtistSearchViewModel;
 import lt.vcs.musicapp.main.artist.viewModel.ArtistsAdapter;
 
@@ -30,6 +31,7 @@ public class ArtistSearchActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ArtistsAdapter artistsAdapter;
     List<Artist> artistList = Collections.emptyList();
+    LinearLayoutManager linearLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,14 +41,13 @@ public class ArtistSearchActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
         viewModel = new ViewModelProvider(this).get(ArtistSearchViewModel.class);
+        linearLayoutManager = new LinearLayoutManager(ArtistSearchActivity.this);
 
         viewModel.fetchArtistSearchResults();
         setUpObservers();
 
         recyclerView = findViewById(R.id.recycleView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(ArtistSearchActivity.this));
-        recyclerView.setAdapter(artistsAdapter);
-
+        recyclerView.setLayoutManager(linearLayoutManager);
         artistsAdapter = new ArtistsAdapter(artistList, getApplication());
         recyclerView.setAdapter(artistsAdapter);
 
@@ -60,7 +61,6 @@ public class ArtistSearchActivity extends AppCompatActivity {
                     public void onChanged(ArtistSearchResults artistSearchResults) {
                         Log.i(LOG_TAG, "Activity onResponse: " + artistSearchResults);
                         artistList = artistSearchResults.getArtistmatches().getArtist();
-
                         artistsAdapter.addList(artistList);
                     }
                 }
@@ -73,7 +73,9 @@ public class ArtistSearchActivity extends AppCompatActivity {
             @Override
             public void onItemClick(int position, View v) {
                 String message = artistList.get(position).toString();
-                Snackbar.make(v, message, Snackbar.LENGTH_LONG).show();
+//                Snackbar.make(v, message, Snackbar.LENGTH_LONG).show();
+                Intent intent = new Intent(ArtistSearchActivity.this, ArtistDetailsActivity.class);
+                startActivity(intent);
             }
         });
 

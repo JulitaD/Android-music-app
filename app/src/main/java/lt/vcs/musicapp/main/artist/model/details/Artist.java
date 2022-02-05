@@ -37,6 +37,14 @@ public class Artist {
         this.bio = bio;
     }
 
+    public Artists getSimilar() {
+        return similar;
+    }
+
+    public void setSimilar(Artists similar) {
+        this.similar = similar;
+    }
+
     @Override
     public String toString() {
         return "Artist{" +

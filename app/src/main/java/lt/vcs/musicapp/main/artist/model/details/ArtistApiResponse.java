@@ -1,10 +1,12 @@
 package lt.vcs.musicapp.main.artist.model.details;
 
-import lt.vcs.musicapp.main.artist.model.details.Artist;
-
 public class ArtistApiResponse {
 
     private Artist artist;
+
+    public ArtistApiResponse(Artist artist) {
+        this.artist = artist;
+    }
 
     public Artist getArtist() {
         return artist;
