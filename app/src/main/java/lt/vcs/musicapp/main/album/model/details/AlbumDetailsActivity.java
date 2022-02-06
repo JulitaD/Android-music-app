@@ -52,7 +52,7 @@ public class AlbumDetailsActivity extends AppCompatActivity {
         setUpObservers();
         setUpUI();
 
-        tracksRecyclerView = findViewById(R.id.songsRecycleView);
+        tracksRecyclerView = findViewById(R.id.albumTracksRecycleView);
         tracksRecyclerView.setLayoutManager(linearLayoutManager);
         albumTracksAdapter = new AlbumTracksAdapter(albumTracks, getApplication());
         tracksRecyclerView.setAdapter(albumTracksAdapter);

@@ -61,8 +61,8 @@ public class ArtistsAdapter extends RecyclerView.Adapter<ArtistsAdapter.ViewHold
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            artistNameTextView = itemView.findViewById(R.id.artistNameTextView);
-            imageView = itemView.findViewById(R.id.artistImageView);
+            artistNameTextView = itemView.findViewById(R.id.artistSearchNameTextView);
+            imageView = itemView.findViewById(R.id.artistSearchImageView);
             itemView.setOnClickListener(this);
         }
 

@@ -34,7 +34,7 @@ public class TrackSearchActivity extends AppCompatActivity {
         viewModel.fetchTrackSearchResults();
         setUpObservers();
 
-        recyclerView = findViewById(R.id.recycleView);
+        recyclerView = findViewById(R.id.trackSearchRecycleView);
         recyclerView.setLayoutManager(new LinearLayoutManager(TrackSearchActivity.this));
         recyclerView.setAdapter(tracksAdapter);
     }

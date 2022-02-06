@@ -47,7 +47,7 @@ public class ArtistSearchActivity extends AppCompatActivity {
         viewModel.fetchArtistSearchResults();
         setUpObservers();
 
-        recyclerView = findViewById(R.id.recycleView);
+        recyclerView = findViewById(R.id.artistsSearchRecycleView);
         recyclerView.setLayoutManager(linearLayoutManager);
         artistsAdapter = new ArtistsAdapter(artistList, getApplication());
         recyclerView.setAdapter(artistsAdapter);

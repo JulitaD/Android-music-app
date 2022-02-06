@@ -24,12 +24,12 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/artistNameTextView"
+            android:id="@+id/albumArtistNameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:text="Biography"
+            android:text="Artist Name"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +43,7 @@
             android:layout_marginTop="16dp"
             android:scaleType="centerCrop"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/artistNameTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/albumArtistNameTextView" />
 
         <TextView
             android:id="@+id/albumWikiTextView"
@@ -83,7 +83,7 @@
             app:layout_constraintTop_toBottomOf="@+id/materialDividerFirst" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/songsRecycleView"
+            android:id="@+id/albumTracksRecycleView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"

@@ -50,7 +50,7 @@ public class AlbumSearchActivity extends AppCompatActivity {
         viewModel.fetchAlbumSearchResults();
         setUpObservers();
 
-        recyclerView = findViewById(R.id.recycleView);
+        recyclerView = findViewById(R.id.albumSearchRecycleView);
         recyclerView.setLayoutManager(linearLayoutManager);
         albumsAdapter = new AlbumsAdapter(albumList, getApplication());
         recyclerView.setAdapter(albumsAdapter);

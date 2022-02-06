@@ -7,7 +7,7 @@
     tools:context=".main.artist.model.search.ArtistSearchActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycleView"
+        android:id="@+id/artistsSearchRecycleView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
