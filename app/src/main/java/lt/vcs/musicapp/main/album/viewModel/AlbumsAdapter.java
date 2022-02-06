@@ -14,17 +14,26 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
+import lt.vcs.musicapp.ClickListener;
 import lt.vcs.musicapp.R;
 import lt.vcs.musicapp.main.album.model.details.Album;
+import lt.vcs.musicapp.main.artist.model.details.Artist;
+import lt.vcs.musicapp.main.artist.viewModel.ArtistsAdapter;
 
 public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.ViewHolder> {
 
     List<Album> albumList;
     Context context;
+    public static ClickListener clickListener;
 
     public AlbumsAdapter(List<Album> list, Context context) {
         this.albumList = list;
         this.context = context;
+    }
+
+    public void addList(List<Album> list) {
+        this.albumList = list;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -50,16 +59,27 @@ public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.ViewHolder
         return albumList.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView albumNameTextView;
         TextView artistNameTextView;
         ImageView imageView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            albumNameTextView = itemView.findViewById(R.id.topAlbumNameTextView);
+            albumNameTextView = itemView.findViewById(R.id.searchAlbumNameTextView);
             artistNameTextView = itemView.findViewById(R.id.albumArtistNameTextView);
-            imageView = itemView.findViewById(R.id.topAlbumImageView);
+            imageView = itemView.findViewById(R.id.albumSearchImageView);
         }
+
+        @Override
+        public void onClick(View view) {
+            AlbumsAdapter.clickListener.onItemClick(getAbsoluteAdapterPosition(), view);
+
+        }
+    }
+
+    public void setOnItemClickListener(ClickListener
+                                               clickListener) {
+        AlbumsAdapter.clickListener = clickListener;
     }
 }

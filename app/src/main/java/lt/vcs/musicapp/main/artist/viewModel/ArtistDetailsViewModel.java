@@ -24,7 +24,7 @@ import retrofit2.Response;
 public class ArtistDetailsViewModel extends ViewModel {
 
     private MutableLiveData<Artist> artist;
-    //?
+
     private MutableLiveData<TopAlbums> topAlbums;
 
     public LiveData<Artist> getArtist() {
@@ -33,8 +33,8 @@ public class ArtistDetailsViewModel extends ViewModel {
         }
         return artist;
     }
-    //?
-    public  LiveData<TopAlbums> getTopAlbums() {
+
+    public LiveData<TopAlbums> getTopAlbums() {
         if (topAlbums == null) {
             topAlbums = new MutableLiveData<TopAlbums>();
         }
@@ -65,7 +65,7 @@ public class ArtistDetailsViewModel extends ViewModel {
         call.enqueue(callback);
     }
 
-        public void fetchTopAlbums(String artistName) {
+    public void fetchTopAlbums(String artistName) {
 
         Call<TopAlbumsApiResponse> call = service.getTopAlbums(artistName, API_KEY, JSON_FORMAT);
 

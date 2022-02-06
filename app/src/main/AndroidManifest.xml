@@ -13,6 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MusicApp">
         <activity
+            android:name=".main.album.model.details.AlbumDetailsActivity"
+            android:exported="false"
+            android:label="Album details" />
+        <activity
             android:name=".main.artist.model.details.ArtistDetailsActivity"
             android:exported="false"
             android:label="Artist details" />

@@ -11,12 +11,12 @@
     app:cardPreventCornerOverlap="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/albumLayout"
+        android:id="@+id/trackLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/albumSearchImageView"
+            android:id="@+id/albumTrackImageView"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:scaleType="centerCrop"
@@ -24,29 +24,16 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/searchAlbumNameTextView"
+            android:id="@+id/albumTrackNameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:text="Album name"
+            android:text="Song name"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/albumSearchImageView"
+            app:layout_constraintStart_toEndOf="@+id/albumTrackImageView"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/albumArtistNameTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="2dp"
-            android:text="Artist name"
-            android:textSize="13sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/albumSearchImageView"
-            app:layout_constraintTop_toBottomOf="@+id/searchAlbumNameTextView" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

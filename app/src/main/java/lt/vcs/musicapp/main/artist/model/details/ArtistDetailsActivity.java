@@ -62,12 +62,6 @@ public class ArtistDetailsActivity extends AppCompatActivity {
         setUpObservers();
         setUpUI();
 
-
-//        artistNameTextView.setText(String.valueOf(artist.getValue().getName()));
-//        artistBiographyTextView.setText(String.valueOf(artist.getBio()));
-//        Glide.with(ArtistDetailsActivity.this)
-//                .load(artist.getImage().get(3).getText());
-
         topAlbumsRecyclerView = findViewById(R.id.topAlbumsRecycleView);
         topAlbumsRecyclerView.setLayoutManager(linearLayoutManagerTopAlbums);
         topAlbumsAdapter = new TopAlbumsAdapter(topAlbumList, getApplication());
