@@ -72,8 +72,7 @@ public class SimilarArtistsAdapter extends RecyclerView.Adapter<SimilarArtistsAd
         }
     }
 
-    public void setOnItemClickListener(ClickListener
-                                               clickListener) {
-        ArtistsAdapter.clickListener = clickListener;
+    public void setOnItemClickListener(ClickListener clickListener) {
+        SimilarArtistsAdapter.clickListener = clickListener;
     }
 }

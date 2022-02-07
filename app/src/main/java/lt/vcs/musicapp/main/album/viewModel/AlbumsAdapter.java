@@ -78,8 +78,7 @@ public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.ViewHolder
         }
     }
 
-    public void setOnItemClickListener(ClickListener
-                                               clickListener) {
+    public void setOnItemClickListener(ClickListener clickListener) {
         AlbumsAdapter.clickListener = clickListener;
     }
 }

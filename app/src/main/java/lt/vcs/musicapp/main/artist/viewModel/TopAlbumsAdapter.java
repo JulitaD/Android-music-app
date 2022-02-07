@@ -73,8 +73,7 @@ public class TopAlbumsAdapter extends RecyclerView.Adapter<TopAlbumsAdapter.View
         }
     }
 
-    public void setOnItemClickListener(ClickListener
-                                               clickListener) {
-        ArtistsAdapter.clickListener = clickListener;
+    public void setOnItemClickListener(ClickListener clickListener) {
+        TopAlbumsAdapter.clickListener = clickListener;
     }
 }
