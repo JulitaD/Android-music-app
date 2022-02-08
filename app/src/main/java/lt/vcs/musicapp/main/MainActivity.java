@@ -67,15 +67,10 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                Log.i("naujas_testas", "CharSequence: " + s);
-                Log.i("naujas_testas", "start: " + start);
-                Log.i("naujas_testas", "before: " + before);
-                Log.i("naujas_testas", "before: " + count);
             }
 
             @Override
             public void afterTextChanged(Editable s) {
-                Log.i("naujas_testas", "afterTextChanged // before: " + s);
                 artistName = s.toString();
             }
         });
