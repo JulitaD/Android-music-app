@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MusicApp">
         <activity
+            android:name=".main.SearchResultsActivity"
+            android:exported="false" />
+        <activity
             android:name=".main.album.view.AlbumDetailsActivity"
             android:exported="false"
             android:label="Album details" />

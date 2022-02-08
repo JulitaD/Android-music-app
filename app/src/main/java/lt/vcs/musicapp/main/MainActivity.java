@@ -5,7 +5,10 @@ import static lt.vcs.musicapp.common.Constants.PUT_ARTIST_NAME;
 import static lt.vcs.musicapp.common.Constants.PUT_TRACK_NAME;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,14 +19,27 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Collections;
+import java.util.List;
+
 import lt.vcs.musicapp.R;
 import lt.vcs.musicapp.main.album.view.AlbumSearchActivity;
+import lt.vcs.musicapp.main.artist.model.details.Artist;
+import lt.vcs.musicapp.main.artist.model.details.Artists;
+import lt.vcs.musicapp.main.artist.view.ArtistDetailsActivity;
 import lt.vcs.musicapp.main.artist.view.ArtistSearchActivity;
+import lt.vcs.musicapp.main.artist.view.TopAlbumsAdapter;
+import lt.vcs.musicapp.main.artist.view.TopArtistsAdapter;
+import lt.vcs.musicapp.main.artist.viewModel.ArtistDetailsViewModel;
 import lt.vcs.musicapp.main.track.view.TrackSearchActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     MainActivityViewModel viewModel = null;
+    RecyclerView topArtistsRecyclerView;
+    TopArtistsAdapter topArtistsAdapter;
+    List<Artist> topArtists = Collections.emptyList();
+    LinearLayoutManager linearLayoutManagerTopArtists;
 
     private String artistName;
     private String albumName;
@@ -40,9 +56,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        artistsButton = findViewById(R.id.artistSearchButton);
-        albumsButton = findViewById(R.id.albumSearchButton);
-        tracksButton = findViewById(R.id.trackSearchButton);
+        viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
+        linearLayoutManagerTopArtists = new LinearLayoutManager(MainActivity.this, linearLayoutManagerTopArtists.HORIZONTAL, false);
+        viewModel.fetchTopArtists();
+        setUpObservers();
+        setUpUI();
+
+        topArtistsRecyclerView = findViewById(R.id.topArtistsRecycleView);
+        topArtistsRecyclerView.setLayoutManager(linearLayoutManagerTopArtists);
+        topArtistsAdapter = new TopArtistsAdapter(topArtists, getApplication());
+        topArtistsRecyclerView.setAdapter(topArtistsAdapter);
 
         searchArtist();
         searchAlbum();
@@ -54,6 +77,17 @@ public class MainActivity extends AppCompatActivity {
 
         viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
 
+    }
+
+    private void setUpObservers() {
+
+        viewModel.getTopArtists().observe(this, new Observer<Artists>() {
+            @Override
+            public void onChanged(Artists artists) {
+                topArtists = artists.getArtist();
+                topArtistsAdapter.addTopArtistsList(topArtists);
+            }
+        });
     }
 
     private void searchArtist() {
@@ -112,6 +146,12 @@ public class MainActivity extends AppCompatActivity {
                 trackName = s.toString();
             }
         });
+    }
+
+    private void setUpUI() {
+        artistsButton = findViewById(R.id.artistSearchButton);
+        albumsButton = findViewById(R.id.albumSearchButton);
+        tracksButton = findViewById(R.id.trackSearchButton);
     }
 
     private void setUpArtistButton() {
