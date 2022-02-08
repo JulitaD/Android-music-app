@@ -65,7 +65,8 @@ public class AlbumDetailsActivity extends AppCompatActivity {
         viewModel.getAlbum().observe(this, new Observer<Album>() {
                     @Override
                     public void onChanged(Album album) {
-                        albumTracks = album.getTracks().getTrack();
+                        if(album.getTracks() != null) {
+                        albumTracks = album.getTracks().getTrack(); }
                         albumTracksAdapter.addAlbumTrackList(albumTracks);
                         albumNameTextView.setText(String.valueOf(album.getName()));
                         artistNameTextView.setText(String.valueOf(album.getArtist()));
