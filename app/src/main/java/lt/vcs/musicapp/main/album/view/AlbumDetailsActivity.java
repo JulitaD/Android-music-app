@@ -1,4 +1,4 @@
-package lt.vcs.musicapp.main.album.model.details;
+package lt.vcs.musicapp.main.album.view;
 
 import static lt.vcs.musicapp.Constants.PUT_ALBUM_NAME;
 import static lt.vcs.musicapp.Constants.PUT_ARTIST_NAME;
@@ -20,8 +20,8 @@ import java.util.Collections;
 import java.util.List;
 
 import lt.vcs.musicapp.R;
+import lt.vcs.musicapp.main.album.model.details.Album;
 import lt.vcs.musicapp.main.album.viewModel.AlbumDetailsViewModel;
-import lt.vcs.musicapp.main.album.viewModel.AlbumTracksAdapter;
 import lt.vcs.musicapp.main.track.model.details.Track;
 
 public class AlbumDetailsActivity extends AppCompatActivity {

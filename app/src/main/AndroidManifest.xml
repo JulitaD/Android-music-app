@@ -13,27 +13,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MusicApp">
         <activity
-            android:name=".main.album.model.details.AlbumDetailsActivity"
+            android:name=".main.album.view.AlbumDetailsActivity"
             android:exported="false"
             android:label="Album details" />
         <activity
-            android:name=".main.artist.model.details.ArtistDetailsActivity"
+            android:name=".main.artist.view.ArtistDetailsActivity"
             android:exported="false"
             android:label="Artist details" />
         <activity
-            android:name=".main.track.model.search.TrackSearchActivity"
+            android:name=".main.track.view.TrackSearchActivity"
             android:exported="false"
             android:label="Search results" />
         <activity
-            android:name=".main.artist.model.search.ArtistSearchActivity"
+            android:name=".main.artist.view.ArtistSearchActivity"
             android:exported="false"
             android:label="Search results" />
         <activity
-            android:name=".main.album.model.search.AlbumSearchActivity"
+            android:name=".main.album.view.AlbumSearchActivity"
             android:exported="false"
             android:label="Search results" />
         <activity
-            android:name=".MainActivity"
+            android:name=".main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

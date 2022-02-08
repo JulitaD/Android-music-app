@@ -1,4 +1,4 @@
-package lt.vcs.musicapp;
+package lt.vcs.musicapp.main;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -8,9 +8,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import lt.vcs.musicapp.main.album.model.search.AlbumSearchActivity;
-import lt.vcs.musicapp.main.artist.model.search.ArtistSearchActivity;
-import lt.vcs.musicapp.main.track.model.search.TrackSearchActivity;
+import lt.vcs.musicapp.R;
+import lt.vcs.musicapp.main.album.view.AlbumSearchActivity;
+import lt.vcs.musicapp.main.artist.view.ArtistSearchActivity;
+import lt.vcs.musicapp.main.track.view.TrackSearchActivity;
 
 public class MainActivity extends AppCompatActivity {
 

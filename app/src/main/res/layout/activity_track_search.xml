@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".main.track.model.search.TrackSearchActivity">
+    tools:context=".main.track.view.TrackSearchActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/trackSearchRecycleView"

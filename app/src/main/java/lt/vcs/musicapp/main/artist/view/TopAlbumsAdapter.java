@@ -1,4 +1,4 @@
-package lt.vcs.musicapp.main.artist.viewModel;
+package lt.vcs.musicapp.main.artist.view;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
-import java.util.Collections;
 import java.util.List;
 
 import lt.vcs.musicapp.ClickListener;

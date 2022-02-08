@@ -1,4 +1,4 @@
-package lt.vcs.musicapp.main.artist.viewModel;
+package lt.vcs.musicapp.main.artist.view;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -18,41 +18,41 @@ import lt.vcs.musicapp.ClickListener;
 import lt.vcs.musicapp.R;
 import lt.vcs.musicapp.main.artist.model.details.Artist;
 
-public class SimilarArtistsAdapter extends RecyclerView.Adapter<SimilarArtistsAdapter.ViewHolder> {
+public class ArtistsAdapter extends RecyclerView.Adapter<ArtistsAdapter.ViewHolder> {
 
-    List<Artist> similarArtistsList;
+    List<Artist> artistList;
     Context context;
     public static ClickListener clickListener;
 
-    public SimilarArtistsAdapter(List<Artist> list, Context context) {
-        this.similarArtistsList = list;
+    public ArtistsAdapter(List<Artist> list, Context context) {
+        this.artistList = list;
         this.context = context;
     }
 
-    public void addSimilarArtistsList(List<Artist> list) {
-        this.similarArtistsList = list;
+    public void addList(List<Artist> list) {
+        this.artistList = list;
         notifyDataSetChanged();
     }
 
     @NonNull
     @Override
-    public SimilarArtistsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ArtistsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         return new ViewHolder(LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.recyclerview_similar_artists, parent, false));
+                .inflate(R.layout.recyclerview_artists, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SimilarArtistsAdapter.ViewHolder holder, int position) {
-        holder.artistNameTextView.setText(similarArtistsList.get(position).getName());
+    public void onBindViewHolder(@NonNull ArtistsAdapter.ViewHolder holder, int position) {
+        holder.artistNameTextView.setText(artistList.get(position).getName());
         Glide.with(context)
-                .load(similarArtistsList.get(position).getImage().get(3).getText())
+                .load(artistList.get(position).getImage().get(3).getText())
                 .into(holder.imageView);
     }
 
     @Override
     public int getItemCount() {
-        return similarArtistsList.size();
+        return artistList.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -61,18 +61,19 @@ public class SimilarArtistsAdapter extends RecyclerView.Adapter<SimilarArtistsAd
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            artistNameTextView = itemView.findViewById(R.id.similarArtistNameTextView);
-            imageView = itemView.findViewById(R.id.similarArtistImageView);
+            artistNameTextView = itemView.findViewById(R.id.artistSearchNameTextView);
+            imageView = itemView.findViewById(R.id.artistSearchImageView);
             itemView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View view) {
-            SimilarArtistsAdapter.clickListener.onItemClick(getAbsoluteAdapterPosition(), view);
+            ArtistsAdapter.clickListener.onItemClick(getAbsoluteAdapterPosition(), view);
         }
     }
 
     public void setOnItemClickListener(ClickListener clickListener) {
-        SimilarArtistsAdapter.clickListener = clickListener;
+        ArtistsAdapter.clickListener = clickListener;
     }
 }
+

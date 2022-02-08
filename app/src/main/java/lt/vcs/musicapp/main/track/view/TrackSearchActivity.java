@@ -1,4 +1,4 @@
-package lt.vcs.musicapp.main.track.model.search;
+package lt.vcs.musicapp.main.track.view;
 
 import static lt.vcs.musicapp.Constants.LOG_TAG;
 
@@ -13,8 +13,8 @@ import android.os.Bundle;
 import android.util.Log;
 
 import lt.vcs.musicapp.R;
+import lt.vcs.musicapp.main.track.model.search.TrackSearchResults;
 import lt.vcs.musicapp.main.track.viewModel.TrackSearchViewModel;
-import lt.vcs.musicapp.main.track.viewModel.TracksAdapter;
 
 public class TrackSearchActivity extends AppCompatActivity {
 

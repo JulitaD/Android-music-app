@@ -1,21 +1,17 @@
-package lt.vcs.musicapp.main.album.viewModel;
+package lt.vcs.musicapp.main.album.view;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-
 import java.util.List;
 
 import lt.vcs.musicapp.R;
-import lt.vcs.musicapp.main.album.model.details.AlbumDetailsActivity;
 import lt.vcs.musicapp.main.track.model.details.Track;
 
 public class AlbumTracksAdapter extends RecyclerView.Adapter<AlbumTracksAdapter.ViewHolder> {

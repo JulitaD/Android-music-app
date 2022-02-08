@@ -1,4 +1,4 @@
-package lt.vcs.musicapp.main.album.viewModel;
+package lt.vcs.musicapp.main.album.view;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -17,8 +17,6 @@ import java.util.List;
 import lt.vcs.musicapp.ClickListener;
 import lt.vcs.musicapp.R;
 import lt.vcs.musicapp.main.album.model.details.Album;
-import lt.vcs.musicapp.main.artist.model.details.Artist;
-import lt.vcs.musicapp.main.artist.viewModel.ArtistsAdapter;
 
 public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.ViewHolder> {
 

@@ -1,4 +1,4 @@
-package lt.vcs.musicapp;
+package lt.vcs.musicapp.main;
 
 import static lt.vcs.musicapp.Constants.ALBUM_NAME;
 import static lt.vcs.musicapp.Constants.API_KEY;

@@ -1,9 +1,8 @@
-package lt.vcs.musicapp.main.artist.model.details;
+package lt.vcs.musicapp.main.artist.view;
 
 import static lt.vcs.musicapp.Constants.PUT_ARTIST_NAME;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -25,9 +24,8 @@ import lt.vcs.musicapp.ClickListener;
 import lt.vcs.musicapp.R;
 import lt.vcs.musicapp.main.album.model.details.TopAlbum;
 import lt.vcs.musicapp.main.album.model.details.TopAlbums;
+import lt.vcs.musicapp.main.artist.model.details.Artist;
 import lt.vcs.musicapp.main.artist.viewModel.ArtistDetailsViewModel;
-import lt.vcs.musicapp.main.artist.viewModel.SimilarArtistsAdapter;
-import lt.vcs.musicapp.main.artist.viewModel.TopAlbumsAdapter;
 
 public class ArtistDetailsActivity extends AppCompatActivity {
 

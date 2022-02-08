@@ -1,4 +1,4 @@
-package lt.vcs.musicapp.main.track.viewModel;
+package lt.vcs.musicapp.main.track.view;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -15,7 +15,6 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import lt.vcs.musicapp.R;
-import lt.vcs.musicapp.main.track.model.details.Track;
 import lt.vcs.musicapp.main.track.model.details.TrackMatch;
 
 public class TracksAdapter extends RecyclerView.Adapter<TracksAdapter.ViewHolder> {
