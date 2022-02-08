@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import java.util.Collections;
 import java.util.List;
 
 import lt.vcs.musicapp.R;
@@ -28,7 +29,7 @@ public class AlbumDetailsActivity extends AppCompatActivity {
     AlbumDetailsViewModel viewModel = null;
     RecyclerView tracksRecyclerView;
     AlbumTracksAdapter albumTracksAdapter;
-    List<Track> albumTracks;
+    List<Track> albumTracks = Collections.emptyList();
     LinearLayoutManager linearLayoutManager;
     TextView albumNameTextView;
     TextView artistNameTextView;
@@ -47,13 +48,13 @@ public class AlbumDetailsActivity extends AppCompatActivity {
 
         viewModel = new ViewModelProvider(this).get(AlbumDetailsViewModel.class);
         linearLayoutManager = new LinearLayoutManager(AlbumDetailsActivity.this);
+        tracksRecyclerView = findViewById(R.id.albumTracksRecycleView);
+        tracksRecyclerView.setLayoutManager(linearLayoutManager);
 
         viewModel.fetchAlbumInfo(artistName, albumName);
         setUpObservers();
         setUpUI();
 
-        tracksRecyclerView = findViewById(R.id.albumTracksRecycleView);
-        tracksRecyclerView.setLayoutManager(linearLayoutManager);
         albumTracksAdapter = new AlbumTracksAdapter(albumTracks, getApplication());
         tracksRecyclerView.setAdapter(albumTracksAdapter);
 
@@ -68,9 +69,11 @@ public class AlbumDetailsActivity extends AppCompatActivity {
                         albumTracksAdapter.addAlbumTrackList(albumTracks);
                         albumNameTextView.setText(String.valueOf(album.getName()));
                         artistNameTextView.setText(String.valueOf(album.getArtist()));
-                        albumWikiTextView.setText(String.valueOf(album.getWiki()));
-                        Glide.with(AlbumDetailsActivity.this)
-                                .load(album.getImage().get(3).getText());
+                        if (album.getWiki() != null) {
+                        albumWikiTextView.setText(String.valueOf(album.getWiki().getContent())); }
+                        if(album.getImage() != null) {
+                            Glide.with(AlbumDetailsActivity.this)
+                                .load(album.getImage().get(3).getText()); }
                     }
                 }
         );

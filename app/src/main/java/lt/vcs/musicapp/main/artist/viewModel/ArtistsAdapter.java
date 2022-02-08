@@ -72,8 +72,7 @@ public class ArtistsAdapter extends RecyclerView.Adapter<ArtistsAdapter.ViewHold
         }
     }
 
-    public void setOnItemClickListener(ClickListener
-                                               clickListener) {
+    public void setOnItemClickListener(ClickListener clickListener) {
         ArtistsAdapter.clickListener = clickListener;
     }
 }
