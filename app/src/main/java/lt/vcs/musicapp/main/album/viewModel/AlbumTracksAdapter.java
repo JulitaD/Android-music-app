@@ -15,6 +15,7 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import lt.vcs.musicapp.R;
+import lt.vcs.musicapp.main.album.model.details.AlbumDetailsActivity;
 import lt.vcs.musicapp.main.track.model.details.Track;
 
 public class AlbumTracksAdapter extends RecyclerView.Adapter<AlbumTracksAdapter.ViewHolder> {
@@ -43,9 +44,6 @@ public class AlbumTracksAdapter extends RecyclerView.Adapter<AlbumTracksAdapter.
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.albumTrackNameTextView.setText(albumTracks.get(position).getName());
-        Glide.with(context)
-                .load(albumTracks.get(position).getImage().get(3).getText())
-                .into(holder.albumTrackImageView);
     }
 
     @Override
@@ -56,12 +54,10 @@ public class AlbumTracksAdapter extends RecyclerView.Adapter<AlbumTracksAdapter.
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView albumTrackNameTextView;
-        ImageView albumTrackImageView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             albumTrackNameTextView = itemView.findViewById(R.id.albumTrackNameTextView);
-            albumTrackImageView = itemView.findViewById(R.id.albumTrackImageView);
         }
     }
 }

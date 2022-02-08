@@ -55,7 +55,7 @@ public class AlbumSearchActivity extends AppCompatActivity {
         albumsAdapter = new AlbumsAdapter(albumList, getApplication());
         recyclerView.setAdapter(albumsAdapter);
 
-        clickItemFromList(); // nepasispaudzia?
+        clickItemFromList();
     }
 
     private void setUpObservers() {
