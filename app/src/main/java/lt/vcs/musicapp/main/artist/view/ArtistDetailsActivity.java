@@ -1,5 +1,6 @@
 package lt.vcs.musicapp.main.artist.view;
 
+import static lt.vcs.musicapp.common.Constants.PUT_ALBUM_NAME;
 import static lt.vcs.musicapp.common.Constants.PUT_ARTIST_NAME;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +25,8 @@ import lt.vcs.musicapp.common.ClickListener;
 import lt.vcs.musicapp.R;
 import lt.vcs.musicapp.main.album.model.details.TopAlbum;
 import lt.vcs.musicapp.main.album.model.details.TopAlbums;
+import lt.vcs.musicapp.main.album.view.AlbumDetailsActivity;
+import lt.vcs.musicapp.main.album.view.AlbumSearchActivity;
 import lt.vcs.musicapp.main.artist.model.details.Artist;
 import lt.vcs.musicapp.main.artist.viewModel.ArtistDetailsViewModel;
 
@@ -109,8 +112,9 @@ public class ArtistDetailsActivity extends AppCompatActivity {
         similarArtistsAdapter.setOnItemClickListener(new ClickListener() {
             @Override
             public void onItemClick(int position, View v) {
-                String message = similarArtistList.get(position).toString();
-                Snackbar.make(v, message, Snackbar.LENGTH_LONG).show();
+                Intent intent = new Intent(ArtistDetailsActivity.this, ArtistDetailsActivity.class);
+                intent.putExtra(PUT_ARTIST_NAME, similarArtistList.get(position).getName());
+                startActivity(intent);
             }
         });
     }
@@ -119,8 +123,10 @@ public class ArtistDetailsActivity extends AppCompatActivity {
         topAlbumsAdapter.setOnItemClickListener(new ClickListener() {
             @Override
             public void onItemClick(int position, View v) {
-                String message = topAlbumList.get(position).toString();
-                Snackbar.make(v, message, Snackbar.LENGTH_LONG).show();
+                Intent intent = new Intent(ArtistDetailsActivity.this, AlbumDetailsActivity.class);
+                intent.putExtra(PUT_ARTIST_NAME, topAlbumList.get(position).getArtist().getName());
+                intent.putExtra(PUT_ALBUM_NAME, topAlbumList.get(position).getName());
+                startActivity(intent);
             }
         });
     }
