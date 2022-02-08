@@ -31,9 +31,9 @@ public class AlbumSearchViewModel extends ViewModel {
 
     UserDataService service = UserServiceClient.getUserInstance().create(UserDataService.class);
 
-    public void fetchAlbumSearchResults() {
+    public void fetchAlbumSearchResults(String albumName) {
 
-        Call<AlbumsApiResponse> call = service.getAlbumSearch(ALBUM_NAME, API_KEY, JSON_FORMAT);
+        Call<AlbumsApiResponse> call = service.getAlbumSearch(albumName, API_KEY, JSON_FORMAT);
 
         Callback<AlbumsApiResponse> callback = new Callback<AlbumsApiResponse>() {
 

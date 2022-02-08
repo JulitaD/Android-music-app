@@ -11,6 +11,7 @@ public class Constants {
 
     public static final String PUT_ARTIST_NAME = "lt.vcs.musicapp.main.artist.model.artist_name";
     public static final String PUT_ALBUM_NAME = "lt.vcs.musicapp.main.album.model.album_name";
+    public static final String PUT_TRACK_NAME = "lt.vcs.musicapp.main.track.model.track_name";
 
 
     public static final String LOG_TAG = "app_test";

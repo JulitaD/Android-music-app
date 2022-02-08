@@ -32,9 +32,9 @@ public class ArtistSearchViewModel extends ViewModel {
 
     UserDataService service = UserServiceClient.getUserInstance().create(UserDataService.class);
 
-    public void fetchArtistSearchResults() {
+    public void fetchArtistSearchResults(String artistName) {
 
-        Call<ArtistsApiResponse> call = service.getArtistSearch(ARTIST_NAME, API_KEY, JSON_FORMAT);
+        Call<ArtistsApiResponse> call = service.getArtistSearch(artistName, API_KEY, JSON_FORMAT);
 
         Callback<ArtistsApiResponse> callback = new Callback<ArtistsApiResponse>() {
 

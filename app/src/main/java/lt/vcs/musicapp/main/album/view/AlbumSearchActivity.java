@@ -38,11 +38,12 @@ public class AlbumSearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_album_search);
 
         Intent intent = getIntent();
+        String albumName = intent.getStringExtra(PUT_ALBUM_NAME);
 
         viewModel = new ViewModelProvider(this).get(AlbumSearchViewModel.class);
         linearLayoutManager = new LinearLayoutManager(AlbumSearchActivity.this);
 
-        viewModel.fetchAlbumSearchResults();
+        viewModel.fetchAlbumSearchResults(albumName);
         setUpObservers();
 
         recyclerView = findViewById(R.id.albumSearchRecycleView);

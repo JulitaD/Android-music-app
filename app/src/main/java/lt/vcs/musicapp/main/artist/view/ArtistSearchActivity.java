@@ -1,5 +1,6 @@
 package lt.vcs.musicapp.main.artist.view;
 
+import static lt.vcs.musicapp.common.Constants.ARTIST_NAME;
 import static lt.vcs.musicapp.common.Constants.LOG_TAG;
 import static lt.vcs.musicapp.common.Constants.PUT_ARTIST_NAME;
 
@@ -37,11 +38,12 @@ public class ArtistSearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_artist_search);
 
         Intent intent = getIntent();
+        String artistName = intent.getStringExtra(PUT_ARTIST_NAME);
 
         viewModel = new ViewModelProvider(this).get(ArtistSearchViewModel.class);
         linearLayoutManager = new LinearLayoutManager(ArtistSearchActivity.this);
 
-        viewModel.fetchArtistSearchResults();
+        viewModel.fetchArtistSearchResults(artistName);
         setUpObservers();
 
         recyclerView = findViewById(R.id.artistsSearchRecycleView);

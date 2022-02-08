@@ -1,6 +1,8 @@
 package lt.vcs.musicapp.main.track.view;
 
 import static lt.vcs.musicapp.common.Constants.LOG_TAG;
+import static lt.vcs.musicapp.common.Constants.PUT_ARTIST_NAME;
+import static lt.vcs.musicapp.common.Constants.PUT_TRACK_NAME;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -28,10 +30,11 @@ public class TrackSearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_track_search);
 
         Intent intent = getIntent();
+        String trackName = intent.getStringExtra(PUT_TRACK_NAME);
 
         viewModel = new ViewModelProvider(this).get(TrackSearchViewModel.class);
 
-        viewModel.fetchTrackSearchResults();
+        viewModel.fetchTrackSearchResults(trackName);
         setUpObservers();
 
         recyclerView = findViewById(R.id.trackSearchRecycleView);

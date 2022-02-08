@@ -32,9 +32,9 @@ public class TrackSearchViewModel extends ViewModel {
 
     UserDataService service = UserServiceClient.getUserInstance().create(UserDataService.class);
 
-    public void fetchTrackSearchResults() {
+    public void fetchTrackSearchResults(String trackName) {
 
-        Call<TracksApiResponse> call = service.getTrackSearch(TRACK_NAME, API_KEY, JSON_FORMAT);
+        Call<TracksApiResponse> call = service.getTrackSearch(trackName, API_KEY, JSON_FORMAT);
 
         Callback<TracksApiResponse> callback = new Callback<TracksApiResponse>() {
 
