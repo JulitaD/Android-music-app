@@ -1,32 +1,19 @@
 package lt.vcs.musicapp.main.album.viewModel;
 
-import static lt.vcs.musicapp.Constants.ALBUM_NAME;
-import static lt.vcs.musicapp.Constants.API_KEY;
-import static lt.vcs.musicapp.Constants.ARTIST_NAME;
-import static lt.vcs.musicapp.Constants.JSON_FORMAT;
-import static lt.vcs.musicapp.Constants.LOG_TAG;
-import static lt.vcs.musicapp.Constants.TRACK_NAME;
+import static lt.vcs.musicapp.common.Constants.ALBUM_NAME;
+import static lt.vcs.musicapp.common.Constants.API_KEY;
+import static lt.vcs.musicapp.common.Constants.JSON_FORMAT;
+import static lt.vcs.musicapp.common.Constants.LOG_TAG;
 
 import android.util.Log;
 
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import lt.vcs.musicapp.main.album.model.details.Album;
-import lt.vcs.musicapp.main.album.model.details.AlbumApiResponse;
-import lt.vcs.musicapp.main.album.model.details.TopAlbums;
 import lt.vcs.musicapp.main.album.model.search.AlbumSearchResults;
 import lt.vcs.musicapp.main.album.model.search.AlbumsApiResponse;
-import lt.vcs.musicapp.main.album.model.search.TopAlbumsApiResponse;
-import lt.vcs.musicapp.main.artist.model.details.Artist;
-import lt.vcs.musicapp.main.artist.model.details.ArtistApiResponse;
-import lt.vcs.musicapp.main.artist.model.search.ArtistSearchResults;
-import lt.vcs.musicapp.main.artist.model.search.ArtistsApiResponse;
-import lt.vcs.musicapp.main.track.model.search.TrackSearchResults;
-import lt.vcs.musicapp.main.track.model.search.TracksApiResponse;
-import lt.vcs.musicapp.network.UserDataService;
-import lt.vcs.musicapp.network.UserServiceClient;
+import lt.vcs.musicapp.common.network.UserDataService;
+import lt.vcs.musicapp.common.network.UserServiceClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

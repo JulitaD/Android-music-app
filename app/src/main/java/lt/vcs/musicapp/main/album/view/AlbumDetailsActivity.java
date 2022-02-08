@@ -1,7 +1,7 @@
 package lt.vcs.musicapp.main.album.view;
 
-import static lt.vcs.musicapp.Constants.PUT_ALBUM_NAME;
-import static lt.vcs.musicapp.Constants.PUT_ARTIST_NAME;
+import static lt.vcs.musicapp.common.Constants.PUT_ALBUM_NAME;
+import static lt.vcs.musicapp.common.Constants.PUT_ARTIST_NAME;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;

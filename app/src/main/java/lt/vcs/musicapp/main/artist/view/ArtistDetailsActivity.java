@@ -1,6 +1,6 @@
 package lt.vcs.musicapp.main.artist.view;
 
-import static lt.vcs.musicapp.Constants.PUT_ARTIST_NAME;
+import static lt.vcs.musicapp.common.Constants.PUT_ARTIST_NAME;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -20,7 +20,7 @@ import com.google.android.material.snackbar.Snackbar;
 import java.util.Collections;
 import java.util.List;
 
-import lt.vcs.musicapp.ClickListener;
+import lt.vcs.musicapp.common.ClickListener;
 import lt.vcs.musicapp.R;
 import lt.vcs.musicapp.main.album.model.details.TopAlbum;
 import lt.vcs.musicapp.main.album.model.details.TopAlbums;

@@ -1,4 +1,4 @@
-package lt.vcs.musicapp.network;
+package lt.vcs.musicapp.common.network;
 
 import lt.vcs.musicapp.main.album.model.details.AlbumApiResponse;
 import lt.vcs.musicapp.main.album.model.search.AlbumsApiResponse;

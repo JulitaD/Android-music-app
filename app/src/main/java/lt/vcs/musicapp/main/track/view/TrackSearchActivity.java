@@ -1,6 +1,6 @@
 package lt.vcs.musicapp.main.track.view;
 
-import static lt.vcs.musicapp.Constants.LOG_TAG;
+import static lt.vcs.musicapp.common.Constants.LOG_TAG;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;

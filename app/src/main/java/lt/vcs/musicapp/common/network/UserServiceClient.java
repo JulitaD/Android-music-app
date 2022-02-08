@@ -1,6 +1,6 @@
-package lt.vcs.musicapp.network;
+package lt.vcs.musicapp.common.network;
 
-import static lt.vcs.musicapp.Constants.BASE_URL;
+import static lt.vcs.musicapp.common.Constants.BASE_URL;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

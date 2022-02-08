@@ -1,9 +1,9 @@
 package lt.vcs.musicapp.main.track.viewModel;
 
-import static lt.vcs.musicapp.Constants.API_KEY;
-import static lt.vcs.musicapp.Constants.JSON_FORMAT;
-import static lt.vcs.musicapp.Constants.LOG_TAG;
-import static lt.vcs.musicapp.Constants.TRACK_NAME;
+import static lt.vcs.musicapp.common.Constants.API_KEY;
+import static lt.vcs.musicapp.common.Constants.JSON_FORMAT;
+import static lt.vcs.musicapp.common.Constants.LOG_TAG;
+import static lt.vcs.musicapp.common.Constants.TRACK_NAME;
 
 import android.util.Log;
 
@@ -13,8 +13,8 @@ import androidx.lifecycle.ViewModel;
 
 import lt.vcs.musicapp.main.track.model.search.TrackSearchResults;
 import lt.vcs.musicapp.main.track.model.search.TracksApiResponse;
-import lt.vcs.musicapp.network.UserDataService;
-import lt.vcs.musicapp.network.UserServiceClient;
+import lt.vcs.musicapp.common.network.UserDataService;
+import lt.vcs.musicapp.common.network.UserServiceClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

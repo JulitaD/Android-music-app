@@ -1,10 +1,9 @@
 package lt.vcs.musicapp.main.artist.viewModel;
 
-import static lt.vcs.musicapp.Constants.ALBUM_NAME;
-import static lt.vcs.musicapp.Constants.API_KEY;
-import static lt.vcs.musicapp.Constants.ARTIST_NAME;
-import static lt.vcs.musicapp.Constants.JSON_FORMAT;
-import static lt.vcs.musicapp.Constants.LOG_TAG;
+import static lt.vcs.musicapp.common.Constants.API_KEY;
+import static lt.vcs.musicapp.common.Constants.ARTIST_NAME;
+import static lt.vcs.musicapp.common.Constants.JSON_FORMAT;
+import static lt.vcs.musicapp.common.Constants.LOG_TAG;
 
 import android.util.Log;
 
@@ -14,8 +13,8 @@ import androidx.lifecycle.ViewModel;
 
 import lt.vcs.musicapp.main.artist.model.search.ArtistSearchResults;
 import lt.vcs.musicapp.main.artist.model.search.ArtistsApiResponse;
-import lt.vcs.musicapp.network.UserDataService;
-import lt.vcs.musicapp.network.UserServiceClient;
+import lt.vcs.musicapp.common.network.UserDataService;
+import lt.vcs.musicapp.common.network.UserServiceClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
