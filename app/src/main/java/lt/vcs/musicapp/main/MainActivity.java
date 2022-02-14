@@ -28,6 +28,7 @@ import lt.vcs.musicapp.main.artist.model.details.Artist;
 import lt.vcs.musicapp.main.artist.model.details.Artists;
 import lt.vcs.musicapp.main.artist.view.ArtistDetailsActivity;
 import lt.vcs.musicapp.main.artist.view.ArtistSearchActivity;
+import lt.vcs.musicapp.main.artist.view.GeoTopArtistsAdapter;
 import lt.vcs.musicapp.main.artist.view.TopAlbumsAdapter;
 import lt.vcs.musicapp.main.artist.view.TopArtistsAdapter;
 import lt.vcs.musicapp.main.artist.viewModel.ArtistDetailsViewModel;
@@ -37,9 +38,13 @@ public class MainActivity extends AppCompatActivity {
 
     MainActivityViewModel viewModel = null;
     RecyclerView topArtistsRecyclerView;
+    RecyclerView geoTopArtistsRecyclerView;
     TopArtistsAdapter topArtistsAdapter;
+    GeoTopArtistsAdapter   geoTopArtistsAdapter;
     List<Artist> topArtists = Collections.emptyList();
+    List<Artist> geoTopArtists = Collections.emptyList();
     LinearLayoutManager linearLayoutManagerTopArtists;
+    LinearLayoutManager linearLayoutManagerGeoTopArtists;
 
     private String artistName;
     private String albumName;
@@ -58,7 +63,9 @@ public class MainActivity extends AppCompatActivity {
 
         viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
         linearLayoutManagerTopArtists = new LinearLayoutManager(MainActivity.this, linearLayoutManagerTopArtists.HORIZONTAL, false);
+        linearLayoutManagerGeoTopArtists = new LinearLayoutManager(MainActivity.this, linearLayoutManagerGeoTopArtists.HORIZONTAL, false);
         viewModel.fetchTopArtists();
+        viewModel.fetchGeoTopArtists();
         setUpObservers();
         setUpUI();
 
@@ -66,6 +73,11 @@ public class MainActivity extends AppCompatActivity {
         topArtistsRecyclerView.setLayoutManager(linearLayoutManagerTopArtists);
         topArtistsAdapter = new TopArtistsAdapter(topArtists, getApplication());
         topArtistsRecyclerView.setAdapter(topArtistsAdapter);
+
+        geoTopArtistsRecyclerView = findViewById(R.id.geoTopArtistsRecycleView);
+        geoTopArtistsRecyclerView.setLayoutManager(linearLayoutManagerGeoTopArtists);
+        geoTopArtistsAdapter = new GeoTopArtistsAdapter(geoTopArtists, getApplication());
+        geoTopArtistsRecyclerView.setAdapter(geoTopArtistsAdapter);
 
         searchArtist();
         searchAlbum();
@@ -88,6 +100,14 @@ public class MainActivity extends AppCompatActivity {
                 topArtistsAdapter.addTopArtistsList(topArtists);
             }
         });
+
+        viewModel.getGeoTopArtists().observe(this, new Observer<Artists>() {
+            @Override
+            public void onChanged(Artists artists) {
+                geoTopArtists = artists.getArtist();
+                geoTopArtistsAdapter.addGeoTopArtistsList(geoTopArtists);
+            }
+        });
     }
 
     private void searchArtist() {
@@ -96,7 +116,6 @@ public class MainActivity extends AppCompatActivity {
         artistSearchEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
 
             @Override
