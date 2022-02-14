@@ -5,6 +5,8 @@ import lt.vcs.musicapp.main.album.model.search.AlbumsApiResponse;
 import lt.vcs.musicapp.main.artist.model.details.ArtistApiResponse;
 import lt.vcs.musicapp.main.artist.model.search.ArtistsApiResponse;
 import lt.vcs.musicapp.main.album.model.search.TopAlbumsApiResponse;
+import lt.vcs.musicapp.main.artist.model.search.ChartsApiResponse;
+import lt.vcs.musicapp.main.artist.model.search.GeoApiResponse;
 import lt.vcs.musicapp.main.track.model.search.TracksApiResponse;
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -29,4 +31,10 @@ public interface UserDataService {
 
     @GET("?method=track.search")
     Call<TracksApiResponse> getTrackSearch(@Query("track") String track_name, @Query("api_key") String api_key, @Query("format") String format);
+
+    @GET("?method=chart.gettopartists")
+    Call<ChartsApiResponse> getChartTopArtists(@Query("api_key") String api_key, @Query("format") String format);
+
+    @GET("?method=geo.gettopartists")
+    Call<GeoApiResponse> getGeoTopArtists(@Query("country") String country, @Query("api_key") String api_key, @Query("format") String format);
 }
